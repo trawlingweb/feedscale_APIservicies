@@ -63,18 +63,24 @@ El parámetro `words` debe enviarse como un **array JSON** de cadenas de texto, 
     "cocacola",
     "#pepsi",
     "cocacola lang:fr",
-    "itau geocode:-25.2867,-57.647,250km OR ueno geocode:-25.2867,-57.647,250km OR basa geocode:-25.2867,-57.647,250km"
+    "itau geocode:-25.2867,-57.647,250km OR ueno geocode:-25.2867,-57.647,250km OR basa geocode:-25.2867,-57.647,250km",
+    "itau geocode:-25.2867,-57.647,250km min_faves:200",
+    "cocacola filter:videos min_faves:100",
+    "itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay"
   ]
 }
 ```
 
-En este ejemplo, el Worker se crea con 5 Palabras Clave:
+En este ejemplo, el Worker se crea con 8 Palabras Clave:
 
 1. Una búsqueda compleja con múltiples cuentas usando el operador OR (máximo 10 cuentas por expresión)
 2. Una palabra simple: "cocacola"
 3. Un hashtag: "#pepsi"
 4. Una palabra con filtro de idioma: "cocacola lang:fr"
 5. Una búsqueda geográfica encadenada con múltiples términos usando geocode y OR
+6. Una combinación de palabra, geocodificación y filtro de popularidad: "itau geocode:-25.2867,-57.647,250km min_faves:200"
+7. Una búsqueda de videos virales: "cocacola filter:videos min_faves:100"
+8. Una búsqueda con exclusión de cuenta oficial: "itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay"
 
 Cada elemento del array `words` consume 1 crédito (1 crédito = 1 Palabra Clave).
 
@@ -116,29 +122,120 @@ Una vez lanzada una petición al API de Twitter éste devolverá una respuesta e
 
 Twitter utiliza su propia sintaxis avanzada para ejecutar búsquedas específicas y detalladas dentro de su plataforma. Esta sintaxis permite filtrar resultados por palabras clave, hashtags, menciones, ubicaciones y fechas, entre otros parámetros. Además, al definir palabras clave para un Worker, es posible utilizar esta misma sintaxis para lanzar consultas precisas contra el buscador de Twitter. Esto maximiza la eficiencia y relevancia de los datos capturados por cada Worker, facilitando una monitorización y análisis más efectivos de las conversaciones en Twitter.
 
-Aquí tienes un listado de los elementos que puedes combinar con tus palabras clave al crearlas dentro de un worker:
+Aquí tienes un listado de los elementos que puedes combinar con tus palabras clave al crearlas dentro de un worker, organizados por categorías:
 
-| Tipo                                             | Descripción                                                                                                                                                                               | Ejemplo keyword                     | Resultado                                                                                                                          |
-| ------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Hashtag                                          | Términos referenciados con la almohadilla #                                                                                                                                               | #pepsi                              | devolvera posts que contienen hashtag (#) pepsi                                                                                    |
-| Arroba                                           | Usuarios referenciados con la arroba @                                                                                                                                                    | @cocacola                           | devolevra postsen los qeu se haetiquetado/mencionado (@) cocacola                                                                  |
-| Cadena simple                                    | Palabra con términos alfanuméricos sin caracteres especiales                                                                                                                              | Studio54                            | devolverá post qeu contienen la palabra "Studio54"                                                                                 |
-| Cadena complejas                                 | Palabras con términos alfanuméricos sin caracteres especiales separadas por espacios                                                                                                      | Cocoa Cola 2019                     | devolverá cualquier post que contenga alguna o todas estas las palabras del ejemplo                                                |
-| Búsqueda exacta                                  | Palabras o frases específicas entre comillas                                                                                                                                              | "cocacola con hielo"                | devolverá posts que contienen exactamente la frase "cocacola con hielo"                                                            |
-| Búsqueda con OR                                  | Palabras múltiples separadas por OR para ampliar resultados                                                                                                                               | Cocacola OR Pepsi                   | devolverá posts que contienen "Cocacola" o "Pepsi" (o ambos)                                                                       |
-| Sin palabras (NOT)                               | Excluye palabras específicas de la búsqueda                                                                                                                                               | Cocacola -pepsi                     | devolverá posts que contienen "Cocacola" pero excluye aquellos que contienen "pepsi"                                               |
-| Hashtag específico                               | Búsqueda de hashtags específicos                                                                                                                                                          | #openai                             | devolverá posts que contienen el hashtag (#) openai                                                                                |
-| Desde una cuenta                                 | Búsqueda de tweets enviados por una cuenta específica. Se pueden encadenar hasta 10 cuentas con OR dentro de una misma expresión                                                          | from:cocacola                       | devolverá posts publicados por la cuenta @cocacola. Ejemplo con múltiples: `from:cuenta1 OR from:cuenta2 OR ... OR from:cuenta10`  |
-| Desde una cuenta pero que habla de algo concreto | Búsqueda de tweets enviados por una cuenta específica. Cuando el emisor de la cuenta menciona la palabra. En este caso no se deben encadenar cuentas con OR dentro de una misma expresión | from:cocacola supermercados         | devolverá posts publicados por la cuenta @cocacola solamente cuando esta use la palabra "supermercados".                           |
-| A una cuenta                                     | Búsqueda de tweets enviados a una cuenta específica                                                                                                                                       | to:pepsi                            | devolverá posts dirigidos a la cuenta @pepsi                                                                                       |
-| Mención de cuenta                                | Búsqueda de tweets que mencionan una cuenta específica                                                                                                                                    | @cocacola                           | devolverá posts en los que se ha etiquetado/mencionado (@) cocacola                                                                |
-| Geocodificación (Más preciso)                    | Búsqueda de tweets dentro de un radio específico usando coordenadas GPS exactas. Es el método más preciso para búsquedas geográficas                                                      | itau geocode:-25.2867,-57.647,250km | devolverá posts que contienen "itau" enviados dentro de un radio de 250km desde las coordenadas especificadas (Asunción, Paraguay) |
-| Desde fecha                                      | Búsqueda de tweets enviados desde una fecha específica                                                                                                                                    | cocacola since:2022-02-17           | devolverá posts que contienen "cocacola" publicados desde el 17 de febrero de 2022                                                 |
-| Hasta fecha                                      | Búsqueda de tweets enviados hasta una fecha específica                                                                                                                                    | pepsi until:2022-02-17              | devolverá posts que contienen "pepsi" publicados hasta el 17 de febrero de 2022                                                    |
-| Pregunta                                         | Búsqueda de tweets que contienen preguntas                                                                                                                                                | pepsi ?                             | devolverá posts que contienen "pepsi" y que son preguntas                                                                          |
-| Con enlaces                                      | Búsqueda de tweets que contienen enlaces                                                                                                                                                  | cocacola filter:links               | devolverá posts que contienen "cocacola" y que incluyen enlaces                                                                    |
-| Fuente específica                                | Búsqueda de tweets publicados desde una fuente específica                                                                                                                                 | pepsi source:twitterfeed            | devolverá posts que contienen "pepsi" publicados desde la fuente twitterfeed                                                       |
-| palabra con idioma específico                    | Búsqueda de tweets publicados en un idioma específico. Ha de ser en ISO Alpha II                                                                                                          | pepsi lang:fr                       | devolverá posts que contienen "pepsi" publicados en francés (ISO Alpha II: fr)                                                     |
+## Búsquedas básicas y de precisión
+
+Estos elementos te permiten refinar y precisar tus búsquedas por tipo de contenido, ubicación, cuentas, idioma y otros filtros específicos:
+
+| Tipo                                             | Descripción                                                                                                                                                                               | Ejemplo keyword                                                                     | Resultado                                                                                                                          |
+| ------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Hashtag                                          | Términos referenciados con la almohadilla #                                                                                                                                               | #pepsi                                                                              | devolvera posts que contienen hashtag (#) pepsi                                                                                    |
+| Arroba                                           | Usuarios referenciados con la arroba @                                                                                                                                                    | @cocacola                                                                           | devolevra postsen los qeu se haetiquetado/mencionado (@) cocacola                                                                  |
+| Cadena simple                                    | Palabra con términos alfanuméricos sin caracteres especiales                                                                                                                              | Studio54                                                                            | devolverá post qeu contienen la palabra "Studio54"                                                                                 |
+| Cadena complejas                                 | Palabras con términos alfanuméricos sin caracteres especiales separadas por espacios                                                                                                      | Cocoa Cola 2019                                                                     | devolverá cualquier post que contenga alguna o todas estas las palabras del ejemplo                                                |
+| Búsqueda exacta                                  | Palabras o frases específicas entre comillas                                                                                                                                              | "cocacola con hielo"                                                                | devolverá posts que contienen exactamente la frase "cocacola con hielo"                                                            |
+| Búsqueda con OR                                  | Palabras múltiples separadas por OR para ampliar resultados                                                                                                                               | Cocacola OR Pepsi                                                                   | devolverá posts que contienen "Cocacola" o "Pepsi" (o ambos)                                                                       |
+| Sin palabras (NOT)                               | Excluye palabras específicas de la búsqueda                                                                                                                                               | Cocacola -pepsi                                                                     | devolverá posts que contienen "Cocacola" pero excluye aquellos que contienen "pepsi"                                               |
+| Hashtag específico                               | Búsqueda de hashtags específicos                                                                                                                                                          | #openai                                                                             | devolverá posts que contienen el hashtag (#) openai                                                                                |
+| Desde una cuenta                                 | Búsqueda de tweets enviados por una cuenta específica. Se pueden encadenar hasta 10 cuentas con OR dentro de una misma expresión                                                          | from:cocacola                                                                       | devolverá posts publicados por la cuenta @cocacola. Ejemplo con múltiples: `from:cuenta1 OR from:cuenta2 OR ... OR from:cuenta10`  |
+| Desde una cuenta pero que habla de algo concreto | Búsqueda de tweets enviados por una cuenta específica. Cuando el emisor de la cuenta menciona la palabra. En este caso no se deben encadenar cuentas con OR dentro de una misma expresión | from:cocacola supermercados                                                         | devolverá posts publicados por la cuenta @cocacola solamente cuando esta use la palabra "supermercados".                           |
+| A una cuenta                                     | Búsqueda de tweets enviados a una cuenta específica                                                                                                                                       | to:pepsi                                                                            | devolverá posts dirigidos a la cuenta @pepsi                                                                                       |
+| Mención de cuenta                                | Búsqueda de tweets que mencionan una cuenta específica                                                                                                                                    | @cocacola                                                                           | devolverá posts en los que se ha etiquetado/mencionado (@) cocacola                                                                |
+| Geocodificación (Más preciso)                    | Búsqueda de tweets dentro de un radio específico usando coordenadas GPS exactas. Es el método más preciso para búsquedas geográficas                                                      | itau geocode:-25.2867,-57.647,250km                                                 | devolverá posts que contienen "itau" enviados dentro de un radio de 250km desde las coordenadas especificadas (Asunción, Paraguay) |
+| Pregunta                                         | Búsqueda de tweets que contienen preguntas                                                                                                                                                | pepsi ?                                                                             | devolverá posts que contienen "pepsi" y que son preguntas                                                                          |
+| Con enlaces                                      | Búsqueda de tweets que contienen enlaces                                                                                                                                                  | cocacola filter:links                                                               | devolverá posts que contienen "cocacola" y que incluyen enlaces                                                                    |
+| Filtro de videos                                 | Búsqueda de tweets que contienen videos                                                                                                                                                   | cocacola filter:videos                                                              | devolverá posts que contienen "cocacola" y que incluyen videos                                                                     |
+| Filtro de imágenes                               | Búsqueda de tweets que contienen imágenes                                                                                                                                                 | pepsi filter:images                                                                 | devolverá posts que contienen "pepsi" y que incluyen imágenes                                                                      |
+| Fuente específica                                | Búsqueda de tweets publicados desde una fuente específica                                                                                                                                 | pepsi source:twitterfeed                                                            | devolverá posts que contienen "pepsi" publicados desde la fuente twitterfeed                                                       |
+| palabra con idioma específico                    | Búsqueda de tweets publicados en un idioma específico. Ha de ser en ISO Alpha II                                                                                                          | pepsi lang:fr                                                                       | devolverá posts que contienen "pepsi" publicados en francés (ISO Alpha II: fr)                                                     |
+| Exclusión de cuenta                              | Excluye tweets de una cuenta específica usando el prefijo menos (-). Útil para ver qué dice la gente real excluyendo cuentas oficiales                                                    | cocacola -from:cocacola                                                             | devolverá posts que contienen "cocacola" pero excluye los publicados por la cuenta oficial @cocacola                               |
+
+## Búsquedas por popularidad
+
+Estos elementos te permiten filtrar resultados por número de likes (favoritos), útil para encontrar contenido viral o popular:
+
+| Tipo                                             | Descripción                                                                                                                               | Ejemplo keyword                                                                     | Resultado                                                                                                                          |
+| ------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Filtro de popularidad (min_faves)                | Búsqueda de tweets con un número mínimo de likes (favoritos). Útil para encontrar contenido viral o popular                               | cocacola min_faves:200                                                              | devolverá posts que contienen "cocacola" con al menos 200 likes                                                                    |
+| Combinación: palabra + geocode + min_faves       | Combina búsqueda de palabra, ubicación geográfica y filtro de popularidad. Los espacios actúan como AND implícito                         | itau geocode:-25.2867,-57.647,250km min_faves:200                                   | devolverá posts sobre "itau" en un radio de 250km desde Asunción con al menos 200 likes                                            |
+| Combinación: videos virales                      | Combina búsqueda de palabra, filtro de videos y filtro de popularidad                                                                     | itau geocode:-25.2867,-57.647,250km min_faves:200 filter:videos                     | devolverá videos virales sobre "itau" en Paraguay con al menos 200 likes                                                           |
+| Combinación: exclusión + geocode + min_faves     | Combina exclusión de cuenta, ubicación geográfica y filtro de popularidad                                                                 | itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay                 | devolverá posts sobre "itau" en Paraguay con al menos 50 likes, excluyendo la cuenta oficial                                       |
+
+## Búsquedas por frescura en el tiempo
+
+Estos elementos te permiten filtrar resultados por fechas específicas o rangos temporales:
+
+| Tipo                                             | Descripción                                                                                                                               | Ejemplo keyword                                                                     | Resultado                                                                                                                          |
+| ------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Desde fecha                                      | Búsqueda de tweets enviados desde una fecha específica                                                                                   | cocacola since:2022-02-17                                                           | devolverá posts que contienen "cocacola" publicados desde el 17 de febrero de 2022                                                 |
+| Hasta fecha                                      | Búsqueda de tweets enviados hasta una fecha específica                                                                                    | pepsi until:2022-02-17                                                              | devolverá posts que contienen "pepsi" publicados hasta el 17 de febrero de 2022                                                    |
+| Combinación: rango de fechas + min_faves         | Combina búsqueda de palabra, rango de fechas y filtro de popularidad                                                                     | itau geocode:-25.2867,-57.647,250km min_faves:100 until:2024-01-01 since:2023-01-01 | devolverá posts sobre "itau" en Paraguay en 2023 con al menos 100 likes                                                            |
+
+### Combinación de múltiples expresiones
+
+Una de las características más potentes de la sintaxis de Twitter es la capacidad de combinar múltiples expresiones y filtros en una sola Palabra Clave. **X (Twitter) interpreta cada espacio como un operador AND implícito**, lo que significa que puedes encadenar diferentes filtros simplemente separándolos por espacios.
+
+#### Reglas importantes para combinar expresiones:
+
+1. **Separación por espacios (AND implícito)**: Cada espacio entre expresiones actúa como un "Y además". Por ejemplo:
+
+   - `itau geocode:-25.2867,-57.647,250km min_faves:200` significa: "itau" Y geocodificado en esa ubicación Y con al menos 200 likes.
+
+2. **Sin espacios después de los dos puntos**: Es crítico que no haya espacios después de los dos puntos en los comandos:
+
+   - ✅ Correcto: `min_faves:200`
+   - ❌ Incorrecto: `min_faves: 200`
+
+3. **Combinación de filtros de contenido**: Puedes combinar filtros de tipo de contenido con otros parámetros:
+
+   - `filter:videos` - Solo tweets con videos
+   - `filter:images` - Solo tweets con imágenes
+   - `filter:links` - Solo tweets con enlaces
+
+4. **Exclusiones con prefijo menos (-)**: Puedes excluir cuentas, palabras o términos usando el prefijo menos:
+   - `-from:cuenta` - Excluye tweets de esa cuenta
+   - `-palabra` - Excluye tweets que contengan esa palabra
+
+#### Ejemplos prácticos de combinaciones:
+
+**Búsqueda de videos virales en una ubicación específica:**
+
+```
+itau geocode:-25.2867,-57.647,250km min_faves:200 filter:videos
+```
+
+Busca videos sobre "itau" en Paraguay con al menos 200 likes.
+
+**Búsqueda excluyendo cuentas oficiales:**
+
+```
+itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay
+```
+
+Busca menciones de "itau" en Paraguay con al menos 50 likes, excluyendo la cuenta oficial.
+
+**Búsqueda en un rango de fechas con filtro de popularidad:**
+
+```
+itau geocode:-25.2867,-57.647,250km min_faves:100 until:2024-01-01 since:2023-01-01
+```
+
+Busca menciones de "itau" en Paraguay durante 2023 con al menos 100 likes.
+
+**Búsqueda de imágenes en un idioma específico:**
+
+```
+cocacola lang:es filter:images min_faves:20
+```
+
+Busca imágenes sobre "cocacola" en español con al menos 20 likes.
+
+#### Nota sobre min_faves y orden de resultados:
+
+Cuando uses `min_faves:` con un número alto, X suele mostrar los resultados en la pestaña "Destacados" (Top) de forma automática. Si cambias a "Más reciente", verás los tweets que alcanzaron ese número de likes ordenados por fecha.
+
+**Recomendación**: Si no aparecen resultados con un `min_faves:` alto, prueba bajando el número (por ejemplo, `min_faves:20` o `min_faves:50`) para verificar que la sintaxis es correcta y que hay contenido disponible.
 
 ### Notas importantes sobre búsquedas geográficas
 
