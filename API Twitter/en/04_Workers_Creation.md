@@ -63,18 +63,24 @@ The `words` parameter must be sent as a **JSON array** of text strings, where ea
     "cocacola",
     "#pepsi",
     "cocacola lang:fr",
-    "itau geocode:-25.2867,-57.647,250km OR ueno geocode:-25.2867,-57.647,250km OR basa geocode:-25.2867,-57.647,250km"
+    "itau geocode:-25.2867,-57.647,250km OR ueno geocode:-25.2867,-57.647,250km OR basa geocode:-25.2867,-57.647,250km",
+    "itau geocode:-25.2867,-57.647,250km min_faves:200",
+    "cocacola filter:videos min_faves:100",
+    "itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay"
   ]
 }
 ```
 
-In this example, the Worker is created with 5 Keywords:
+In this example, the Worker is created with 8 Keywords:
 
 1. A complex search with multiple accounts using the OR operator (maximum 10 accounts per expression)
 2. A simple word: "cocacola"
 3. A hashtag: "#pepsi"
 4. A word with language filter: "cocacola lang:fr"
 5. A chained geographic search with multiple terms using geocode and OR
+6. A combination of word, geocoding, and popularity filter: "itau geocode:-25.2867,-57.647,250km min_faves:200"
+7. A viral video search: "cocacola filter:videos min_faves:100"
+8. A search with official account exclusion: "itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay"
 
 Each element in the `words` array consumes 1 credit (1 credit = 1 Keyword).
 
@@ -116,7 +122,11 @@ Once a request is sent to the Twitter API, it will return a response structured 
 
 Twitter uses its own advanced syntax to perform specific and detailed searches within its platform. This syntax allows filtering results by keywords, hashtags, mentions, locations, and dates, among other parameters. Additionally, when defining keywords for a Worker, this same syntax can be used to launch precise queries against Twitter's search engine. This maximizes the efficiency and relevance of the data captured by each Worker, facilitating more effective monitoring and analysis of Twitter conversations.
 
-Here is a list of elements you can combine with your keywords when creating them within a worker:
+Here is a list of elements you can combine with your keywords when creating them within a worker, organized by categories:
+
+## Basic and Precision Searches
+
+These elements allow you to refine and precisely target your searches by content type, location, accounts, language, and other specific filters:
 
 | Type                                        | Description                                                                                                                                                      | Example keyword                     | Result                                                                                                                             |
 | ------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -128,17 +138,104 @@ Here is a list of elements you can combine with your keywords when creating them
 | OR Search                                   | Multiple words separated by OR to broaden results                                                                                                                | Cocacola OR Pepsi                   | returns posts that contain "Cocacola" or "Pepsi" (or both)                                                                         |
 | Without words (NOT)                         | Exclude specific words from the search                                                                                                                           | Cocacola -pepsi                     | returns posts that contain "Cocacola" but excludes those that contain "pepsi"                                                      |
 | Specific Hashtag                            | Search for specific hashtags                                                                                                                                     | #openai                             | returns posts that contain the hashtag (#) openai                                                                                  |
-| From an account                             | Search for tweets sent by a specific account. Up to 10 accounts can be chained with OR within a single expression                                                | from:cocacola                       | returns posts published by the @cocacola account. Example with multiple: `from:account1 OR from:account2 OR ... OR from:account10` |
+| From an account                             | Search for tweets sent by a specific account. Up to 10 accounts can be chained with OR within a single expression                                                | from:cocacola                       | returns posts published by the @cocacola account. Example with multiple: `from:account1 OR from:account2 OR ... OR from:account10` | 
 | From an account mentioning specific content | Search for tweets sent by a specific account when the account mentions the word. In this case, accounts should not be chained with OR within a single expression | from:cocacola supermercados         | returns posts published by the @cocacola account only when it uses the word "supermercados".                                       |
 | To an account                               | Search for tweets sent to a specific account                                                                                                                     | to:pepsi                            | returns posts directed to the @pepsi account                                                                                       |
 | Mention of account                          | Search for tweets that mention a specific account                                                                                                                | @cocacola                           | returns posts in which @cocacola has been tagged/mentioned                                                                         |
 | Geocoding (Most precise)                    | Search for tweets within a specific radius using exact GPS coordinates. This is the most precise method for geographic searches                                  | itau geocode:-25.2867,-57.647,250km | returns posts that contain "itau" sent within a radius of 250km from the specified coordinates (Asunción, Paraguay)                |
-| Since date                                  | Search for tweets sent since a specific date                                                                                                                     | cocacola since:2022-02-17           | returns posts that contain "cocacola" published since February 17, 2022                                                            |
-| Until date                                  | Search for tweets sent until a specific date                                                                                                                     | pepsi until:2022-02-17              | returns posts that contain "pepsi" published until February 17, 2022                                                               |
 | Question                                    | Search for tweets that contain questions                                                                                                                         | pepsi ?                             | returns posts that contain "pepsi" and that are questions                                                                          |
 | With links                                  | Search for tweets that contain links                                                                                                                             | cocacola filter:links               | returns posts that contain "cocacola" and that include links                                                                       |
+| Video filter                                | Search for tweets that contain videos                                                                                                                             | cocacola filter:videos              | returns posts that contain "cocacola" and that include videos                                                                      |
+| Image filter                                | Search for tweets that contain images                                                                                                                             | pepsi filter:images                 | returns posts that contain "pepsi" and that include images                                                                         |
 | Specific source                             | Search for tweets published from a specific source                                                                                                               | pepsi source:twitterfeed            | returns posts that contain "pepsi" published from the twitterfeed source                                                           |
 | Word with specific language                 | Search for tweets published in a specific language. Must be in ISO Alpha II                                                                                      | pepsi lang:fr                       | returns posts that contain "pepsi" published in French (ISO Alpha II: fr)                                                          |
+| Account exclusion                           | Excludes tweets from a specific account using the minus prefix (-). Useful for seeing what real people say excluding official accounts                          | cocacola -from:cocacola             | returns posts that contain "cocacola" but excludes those published by the official @cocacola account                                |
+
+## Popularity Searches
+
+These elements allow you to filter results by number of likes (favorites), useful for finding viral or popular content:
+
+| Type                                             | Description                                                                                                                               | Example keyword                                                                     | Result                                                                                                                             |
+| ------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Popularity filter (min_faves)                    | Search for tweets with a minimum number of likes (favorites). Useful for finding viral or popular content                                | cocacola min_faves:200                                                              | returns posts that contain "cocacola" with at least 200 likes                                                                       |
+| Combination: word + geocode + min_faves          | Combines word search, geographic location, and popularity filter. Spaces act as implicit AND                                            | itau geocode:-25.2867,-57.647,250km min_faves:200                                   | returns posts about "itau" within a 250km radius from Asunción with at least 200 likes                                            |
+| Combination: viral videos                        | Combines word search, video filter, and popularity filter                                                                                 | itau geocode:-25.2867,-57.647,250km min_faves:200 filter:videos                     | returns viral videos about "itau" in Paraguay with at least 200 likes                                                             |
+| Combination: exclusion + geocode + min_faves      | Combines account exclusion, geographic location, and popularity filter                                                                     | itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay                 | returns posts about "itau" in Paraguay with at least 50 likes, excluding the official account                                     |
+
+## Time Freshness Searches
+
+These elements allow you to filter results by specific dates or time ranges:
+
+| Type                                             | Description                                                                                                                               | Example keyword                                                                     | Result                                                                                                                             |
+| ------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Since date                                       | Search for tweets sent since a specific date                                                                                              | cocacola since:2022-02-17                                                           | returns posts that contain "cocacola" published since February 17, 2022                                                           |
+| Until date                                       | Search for tweets sent until a specific date                                                                                               | pepsi until:2022-02-17                                                              | returns posts that contain "pepsi" published until February 17, 2022                                                               |
+| Combination: date range + min_faves              | Combines word search, date range, and popularity filter                                                                                   | itau geocode:-25.2867,-57.647,250km min_faves:100 until:2024-01-01 since:2023-01-01 | returns posts about "itau" in Paraguay in 2023 with at least 100 likes                                                            |
+
+### Combining Multiple Expressions
+
+One of the most powerful features of Twitter syntax is the ability to combine multiple expressions and filters in a single Keyword. **X (Twitter) interprets each space as an implicit AND operator**, meaning you can chain different filters simply by separating them with spaces.
+
+#### Important rules for combining expressions:
+
+1. **Separation by spaces (implicit AND)**: Each space between expressions acts as an "AND also". For example:
+
+   - `itau geocode:-25.2867,-57.647,250km min_faves:200` means: "itau" AND geocoded in that location AND with at least 200 likes.
+
+2. **No spaces after colons**: It is critical that there are no spaces after the colons in commands:
+
+   - ✅ Correct: `min_faves:200`
+   - ❌ Incorrect: `min_faves: 200`
+
+3. **Combining content filters**: You can combine content type filters with other parameters:
+
+   - `filter:videos` - Only tweets with videos
+   - `filter:images` - Only tweets with images
+   - `filter:links` - Only tweets with links
+
+4. **Exclusions with minus prefix (-)**: You can exclude accounts, words, or terms using the minus prefix:
+   - `-from:account` - Excludes tweets from that account
+   - `-word` - Excludes tweets containing that word
+
+#### Practical examples of combinations:
+
+**Search for viral videos in a specific location:**
+
+```
+itau geocode:-25.2867,-57.647,250km min_faves:200 filter:videos
+```
+
+Searches for videos about "itau" in Paraguay with at least 200 likes.
+
+**Search excluding official accounts:**
+
+```
+itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay
+```
+
+Searches for mentions of "itau" in Paraguay with at least 50 likes, excluding the official account.
+
+**Search within a date range with popularity filter:**
+
+```
+itau geocode:-25.2867,-57.647,250km min_faves:100 until:2024-01-01 since:2023-01-01
+```
+
+Searches for mentions of "itau" in Paraguay during 2023 with at least 100 likes.
+
+**Search for images in a specific language:**
+
+```
+cocacola lang:es filter:images min_faves:20
+```
+
+Searches for images about "cocacola" in Spanish with at least 20 likes.
+
+#### Note on min_faves and result ordering:
+
+When using `min_faves:` with a high number, X usually shows results in the "Top" tab automatically. If you switch to "Latest", you'll see tweets that reached that number of likes sorted by date.
+
+**Recommendation**: If no results appear with a high `min_faves:`, try lowering the number (for example, `min_faves:20` or `min_faves:50`) to verify that the syntax is correct and that content is available.
 
 ### Important notes on geographic searches
 
