@@ -4,7 +4,7 @@ Bienvenido a la documentación de la API FeedScale de Trawlingweb.com. Nuestra A
 
 ## ¿Qué es GeriAI?
 
-**GeriAI** es el motor de inteligencia artificial cognitiva desarrollado por Trawlingweb que procesa y analiza automáticamente las publicaciones capturadas en el repositorio de FeedScale. GeriAI es un sistema de Fine Tuning avanzado que utiliza técnicas de Procesamiento de Lenguaje Natural (NLP), Machine Learning, Deep Learning, Análisis de Sentimientos, Extracción de Entidades Nombradas (NER), Clasificación de Texto, Análisis de Tópicos (LDA, BERT), Embeddings Semánticos y Transfer Learning para transformar contenido no estructurado en datos inteligentes y accionables.
+**GeriAI** es el motor de inteligencia artificial cognitiva desarrollado por Trawlingweb que procesa y analiza automáticamente las publicaciones capturadas en el repositorio de FeedScale. GeriAI es un sistema de IA avanzado que utiliza técnicas de Procesamiento de Lenguaje Natural (NLP), Machine Learning, Deep Learning, Análisis de Sentimientos, Extracción de Entidades Nombradas (NER), Clasificación de Texto, Análisis de Tópicos (LDA, BERT), Embeddings Semánticos y Transfer Learning para transformar contenido no estructurado en datos inteligentes y accionables.
 
 ### Análisis Multidimensional de GeriAI
 
@@ -86,13 +86,13 @@ Nuestra API FeedScale está diseñada para ser una herramienta potente y versát
 Para comenzar a usar la API, necesitarás:
 
 1. **Token de Acceso**: Tu API Key única proporcionada por Trawlingweb
-2. **Endpoint Base**: `http://localhost:3000/feedscaleaiposts` (o la URL de producción)
+2. **Endpoint Base**: `https://feedscale.trawlingweb.com/posts`
 3. **Parámetros de Consulta**: `token`, `ts`, `tsi`, `size` (opcionales)
 
 ### Ejemplo Básico:
 
 ```
-GET http://localhost:3000/feedscaleaiposts?token=TU_API_KEY
+GET https://feedscale.trawlingweb.com/posts?token=TU_API_KEY
 ```
 
 Esta llamada devolverá los últimos 500 resultados del último mes, con información de paginación para acceder a más datos si es necesario.

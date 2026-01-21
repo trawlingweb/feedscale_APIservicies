@@ -1,4 +1,4 @@
-# FeedScale API - GET /feedscaleaiposts Method
+# FeedScale API - GET /posts Method
 
 This method allows you to retrieve captured FeedScale posts from BigQuery. Temporal delimiters can be used to narrow the returned content.
 
@@ -7,7 +7,7 @@ This method allows you to retrieve captured FeedScale posts from BigQuery. Tempo
 The API call is built from the basic structure:
 
 ```
-http://localhost:3000/feedscaleaiposts?token={APIKEY}
+https://feedscale.trawlingweb.com/posts?token={APIKEY}
 ```
 
 ### QUERY Parameters
@@ -15,8 +15,8 @@ http://localhost:3000/feedscaleaiposts?token={APIKEY}
 | Parameter | Description | Default | Example |
 | :-------- | :---------- | :------ | :------ |
 | token | APIKEY to validate and access the system. Each user has their own individual and non-transferable APIKEY. | Required value | `?token=1234` |
-| ts | Initial temporal delimiter. Unix Time format in milliseconds | Delimits to 1 month in the past from the request | `&ts=1518472804000` |
-| tsi | Final temporal delimiter. Unix Time format in milliseconds | Delimits with the request date | `&tsi=1524818189854` |
+| ts | Initial temporal delimiter (past time). Unix Time format in milliseconds. Results are ordered from past to present (ASC). | Delimits to 1 month in the past from the request | `&ts=1518472804000` |
+| tsi | Final temporal delimiter (present time). Unix Time format in milliseconds. | Delimits with the request date | `&tsi=1524818189854` |
 | size | Number of results per page | 500 (maximum: 500) | `&size=100` |
 
 **Note**: `apiKey` is also accepted as an alternative to `token`, and `TS`/`TSI` in uppercase for compatibility.
@@ -27,6 +27,8 @@ http://localhost:3000/feedscaleaiposts?token={APIKEY}
 
 Each API request can return a maximum of **500 posts** matching your query. However, there may be many more results that match your filter parameters. To consume all data, you must continue making calls to the URL indicated in the **next** parameter of each request's output.
 
+**Result order**: Results are ordered in ascending order (ASC), from past (`ts`) to present (`tsi`). Older posts appear first, and newer posts at the end of each page.
+
 ### Pagination Output Example
 
 ```json
@@ -35,7 +37,7 @@ Each API request can return a maximum of **500 posts** matching your query. Howe
     "data": [...],
     "totalResults": 7940,
     "restResults": 7435,
-    "next": "http://localhost:3000/feedscaleaiposts?token=1234&ts=1766312910631&tsi=1768866612000&size=500"
+    "next": "https://feedscale.trawlingweb.com/posts?token=1234&ts=1766312910631&tsi=1768866612000&size=500"
   }
 }
 ```
@@ -64,19 +66,19 @@ By default, the API returns 500 results per request. If you need to receive fewe
 ### Basic Query (Last month, 500 results per page)
 
 ```
-http://localhost:3000/feedscaleaiposts?token=1234
+https://feedscale.trawlingweb.com/posts?token=1234
 ```
 
 ### With Result Limit
 
 ```
-http://localhost:3000/feedscaleaiposts?token=1234&size=100
+https://feedscale.trawlingweb.com/posts?token=1234&size=100
 ```
 
 ### Last 24 Hours with Pagination
 
 ```
-http://localhost:3000/feedscaleaiposts?token=1234&ts=1768818277820&tsi=1768904677820&size=100
+https://feedscale.trawlingweb.com/posts?token=1234&ts=1768818277820&tsi=1768904677820&size=100
 ```
 
 ---
@@ -100,7 +102,7 @@ const last7Days = now - (7 * 24 * 60 * 60 * 1000);
 const last30Days = now - (30 * 24 * 60 * 60 * 1000);
 
 // Example URL with pagination
-const url = `http://localhost:3000/feedscaleaiposts?token=1234&ts=${last24Hours}&tsi=${now}&size=100`;
+const url = `https://feedscale.trawlingweb.com/posts?token=1234&ts=${last24Hours}&tsi=${now}&size=100`;
 ```
 
 ### Python
@@ -111,7 +113,7 @@ import time
 now = int(time.time() * 1000)  # milliseconds
 last24hours = now - (24 * 60 * 60 * 1000)
 
-url = f"http://localhost:3000/feedscaleaiposts?token=1234&ts={last24hours}&tsi={now}&size=100"
+url = f"https://feedscale.trawlingweb.com/posts?token=1234&ts={last24hours}&tsi={now}&size=100"
 ```
 
 ### Conversion Table
@@ -149,7 +151,7 @@ async function consumeAllResults(initialUrl) {
 }
 
 // Usage
-const url = 'http://localhost:3000/feedscaleaiposts?token=1234&size=500';
+const url = 'https://feedscale.trawlingweb.com/posts?token=1234&size=500';
 consumeAllResults(url);
 ```
 
@@ -175,7 +177,7 @@ def consume_all_results(initial_url):
     return all_results
 
 # Usage
-url = 'http://localhost:3000/feedscaleaiposts?token=1234&size=500'
+url = 'https://feedscale.trawlingweb.com/posts?token=1234&size=500'
 results = consume_all_results(url)
 ```
 
@@ -192,7 +194,7 @@ results = consume_all_results(url)
       {
         "id": 123,
         "c_noticia": 456,
-        "published": {"value": "2025-12-21T10:00:00.000Z"},
+        "published": "2025-12-21 10:00:00",
         "autor": "User",
         "marca": "Ueno",
         "origen": "twitter",
@@ -207,7 +209,7 @@ results = consume_all_results(url)
     ],
     "totalResults": 7940,
     "restResults": 7440,
-    "next": "http://localhost:3000/feedscaleaiposts?token=1234&ts=...&tsi=...&size=500"
+    "next": "https://feedscale.trawlingweb.com/posts?token=1234&ts=...&tsi=...&size=500"
   }
 }
 ```
@@ -218,7 +220,7 @@ results = consume_all_results(url)
 | ----- | ----------- | ---- |
 | id | Identification code assigned to each post | Integer |
 | c_noticia | News code | Integer |
-| published | Post publication date | ISO 8601-UTC Date |
+| published | Post publication date (format: YYYY-MM-DD HH:mm:ss) | String |
 | autor | Author name | String |
 | marca | Related brand | String |
 | origen | Post origin (twitter, instagram, facebook, etc.) | String |
@@ -254,7 +256,7 @@ results = consume_all_results(url)
 To verify that the server is running:
 
 ```
-http://localhost:3000/health
+https://feedscale.trawlingweb.com/health
 ```
 
 Response:
@@ -272,13 +274,13 @@ Response:
 
 ```bash
 # Basic (500 results)
-curl "http://localhost:3000/feedscaleaiposts?token=1234"
+curl "https://feedscale.trawlingweb.com/posts?token=1234"
 
 # With limit of 100 results per page
-curl "http://localhost:3000/feedscaleaiposts?token=1234&size=100"
+curl "https://feedscale.trawlingweb.com/posts?token=1234&size=100"
 
 # Last 24 hours with pagination
 NOW=$(date +%s)000
 LAST24H=$((NOW - 86400000))
-curl "http://localhost:3000/feedscaleaiposts?token=1234&ts=${LAST24H}&tsi=${NOW}&size=100"
+curl "https://feedscale.trawlingweb.com/posts?token=1234&ts=${LAST24H}&tsi=${NOW}&size=100"
 ```

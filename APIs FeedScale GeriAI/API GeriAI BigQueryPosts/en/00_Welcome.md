@@ -4,7 +4,7 @@ Welcome to the FeedScale API documentation by Trawlingweb.com. Our API provides 
 
 ## What is GeriAI?
 
-**GeriAI** is the cognitive artificial intelligence engine developed by Trawlingweb that automatically processes and analyzes posts captured in the FeedScale repository. GeriAI is an advanced Fine Tuning system that uses Natural Language Processing (NLP), Machine Learning, Deep Learning, Sentiment Analysis, Named Entity Recognition (NER), Text Classification, Topic Analysis (LDA, BERT), Semantic Embeddings, and Transfer Learning techniques to transform unstructured content into intelligent and actionable data.
+**GeriAI** is the cognitive artificial intelligence engine developed by Trawlingweb that automatically processes and analyzes posts captured in the FeedScale repository. GeriAI is an advanced AI system that uses Natural Language Processing (NLP), Machine Learning, Deep Learning, Sentiment Analysis, Named Entity Recognition (NER), Text Classification, Topic Analysis (LDA, BERT), Semantic Embeddings, and Transfer Learning techniques to transform unstructured content into intelligent and actionable data.
 
 ### GeriAI Multidimensional Analysis
 
@@ -86,13 +86,13 @@ Our FeedScale API is designed to be a powerful and versatile tool, adapted to th
 To start using the API, you will need:
 
 1. **Access Token**: Your unique API Key provided by Trawlingweb
-2. **Base Endpoint**: `http://localhost:3000/feedscaleaiposts` (or production URL)
+2. **Base Endpoint**: `https://feedscale.trawlingweb.com/posts`
 3. **Query Parameters**: `token`, `ts`, `tsi`, `size` (optional)
 
 ### Basic Example:
 
 ```
-GET http://localhost:3000/feedscaleaiposts?token=YOUR_API_KEY
+GET https://feedscale.trawlingweb.com/posts?token=YOUR_API_KEY
 ```
 
 This call will return the last 500 results from the last month, with pagination information to access more data if needed.
