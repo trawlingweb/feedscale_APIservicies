@@ -66,12 +66,14 @@ El parámetro `words` debe enviarse como un **array JSON** de cadenas de texto, 
     "itau geocode:-25.2867,-57.647,250km OR ueno geocode:-25.2867,-57.647,250km OR basa geocode:-25.2867,-57.647,250km",
     "itau geocode:-25.2867,-57.647,250km min_faves:200",
     "cocacola filter:videos min_faves:100",
-    "itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay"
+    "itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay",
+    "cocacola min_replies:10",
+    "cocacola min_retweets:10"
   ]
 }
 ```
 
-En este ejemplo, el Worker se crea con 8 Palabras Clave:
+En este ejemplo, el Worker se crea con 10 Palabras Clave:
 
 1. Una búsqueda compleja con múltiples cuentas usando el operador OR (máximo 10 cuentas por expresión)
 2. Una palabra simple: "cocacola"
@@ -81,6 +83,8 @@ En este ejemplo, el Worker se crea con 8 Palabras Clave:
 6. Una combinación de palabra, geocodificación y filtro de popularidad: "itau geocode:-25.2867,-57.647,250km min_faves:200"
 7. Una búsqueda de videos virales: "cocacola filter:videos min_faves:100"
 8. Una búsqueda con exclusión de cuenta oficial: "itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay"
+9. Una búsqueda con filtro de respuestas: "cocacola min_replies:10"
+10. Una búsqueda con filtro de retweets: "cocacola min_retweets:10"
 
 Cada elemento del array `words` consume 1 crédito (1 crédito = 1 Palabra Clave).
 
@@ -153,11 +157,13 @@ Estos elementos te permiten refinar y precisar tus búsquedas por tipo de conten
 
 ## Búsquedas por popularidad
 
-Estos elementos te permiten filtrar resultados por número de likes (favoritos), útil para encontrar contenido viral o popular:
+Estos elementos te permiten filtrar resultados por número de likes (favoritos), respuestas y retweets, útil para encontrar contenido viral o popular:
 
 | Tipo                                             | Descripción                                                                                                                               | Ejemplo keyword                                                                     | Resultado                                                                                                                          |
 | ------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | Filtro de popularidad (min_faves)                | Búsqueda de tweets con un número mínimo de likes (favoritos). Útil para encontrar contenido viral o popular                               | cocacola min_faves:200                                                              | devolverá posts que contienen "cocacola" con al menos 200 likes                                                                    |
+| Filtro de respuestas (min_replies)               | Búsqueda de tweets con un número mínimo de respuestas. Útil para encontrar contenido que genera conversación o debate                     | cocacola min_replies:10                                                             | devolverá posts que contienen "cocacola" con al menos 10 respuestas                                                                |
+| Filtro de retweets (min_retweets)                | Búsqueda de tweets con un número mínimo de retweets. Útil para encontrar contenido que se comparte ampliamente                            | cocacola min_retweets:10                                                            | devolverá posts que contienen "cocacola" con al menos 10 retweets                                                                 |
 | Combinación: palabra + geocode + min_faves       | Combina búsqueda de palabra, ubicación geográfica y filtro de popularidad. Los espacios actúan como AND implícito                         | itau geocode:-25.2867,-57.647,250km min_faves:200                                   | devolverá posts sobre "itau" en un radio de 250km desde Asunción con al menos 200 likes                                            |
 | Combinación: videos virales                      | Combina búsqueda de palabra, filtro de videos y filtro de popularidad                                                                     | itau geocode:-25.2867,-57.647,250km min_faves:200 filter:videos                     | devolverá videos virales sobre "itau" en Paraguay con al menos 200 likes                                                           |
 | Combinación: exclusión + geocode + min_faves     | Combina exclusión de cuenta, ubicación geográfica y filtro de popularidad                                                                 | itau geocode:-25.2867,-57.647,250km min_faves:50 -from:itauparaguay                 | devolverá posts sobre "itau" en Paraguay con al menos 50 likes, excluyendo la cuenta oficial                                       |
@@ -231,11 +237,35 @@ cocacola lang:es filter:images min_faves:20
 
 Busca imágenes sobre "cocacola" en español con al menos 20 likes.
 
-#### Nota sobre min_faves y orden de resultados:
+**Búsqueda con filtro de respuestas:**
 
-Cuando uses `min_faves:` con un número alto, X suele mostrar los resultados en la pestaña "Destacados" (Top) de forma automática. Si cambias a "Más reciente", verás los tweets que alcanzaron ese número de likes ordenados por fecha.
+```
+cocacola min_replies:10
+```
 
-**Recomendación**: Si no aparecen resultados con un `min_faves:` alto, prueba bajando el número (por ejemplo, `min_faves:20` o `min_faves:50`) para verificar que la sintaxis es correcta y que hay contenido disponible.
+Busca tweets sobre "cocacola" con al menos 10 respuestas.
+
+**Búsqueda con filtro de retweets:**
+
+```
+cocacola min_retweets:10
+```
+
+Busca tweets sobre "cocacola" con al menos 10 retweets.
+
+**Búsqueda combinando múltiples métricas de engagement:**
+
+```
+cocacola min_faves:100 min_retweets:50 min_replies:20
+```
+
+Busca tweets sobre "cocacola" con al menos 100 likes, 50 retweets y 20 respuestas.
+
+#### Nota sobre filtros de popularidad (min_faves, min_replies, min_retweets) y orden de resultados:
+
+Cuando uses `min_faves:`, `min_replies:` o `min_retweets:` con un número alto, X suele mostrar los resultados en la pestaña "Destacados" (Top) de forma automática. Si cambias a "Más reciente", verás los tweets que alcanzaron ese número de interacciones ordenados por fecha.
+
+**Recomendación**: Si no aparecen resultados con un valor alto en estos filtros, prueba bajando el número (por ejemplo, `min_faves:20`, `min_replies:5` o `min_retweets:5`) para verificar que la sintaxis es correcta y que hay contenido disponible.
 
 ### Notas importantes sobre búsquedas geográficas
 
