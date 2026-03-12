@@ -16,7 +16,7 @@ Los filtros son atributos asignados por TrawlingWeb a cada elemento durante su p
 | site_region   | Región del sitio web: [ISO-3166-2](https://es.wikipedia.org/wiki/ISO_3166-2).                                                                             |
 | author        | Autor de la publicación: joanfuster, angelgabilondo, etc                                                                                                  |
 | published     | Fecha de publicación (en milisegundos). [Conversor](http://www.onlineconversion.com/unix_time.htm)                                                        |
-| crawled       | Fecha de restreo (en milisegundos). [Conversor](http://www.onlineconversion.com/unix_time.htm)                                                            |
+| crawled       | Fecha de indexación (en milisegundos). [Conversor](http://www.onlineconversion.com/unix_time.htm)                                                            |
 | site_type     | Tipo del sitio web: general, news, blog o discussion.                                                                                                     |
 
 ## La forma de assignar una expresion de filtro
@@ -40,7 +40,7 @@ El no poder escapar de estos caracteres especiales correctamente podría dar lug
 ## Ejemplos de filtros y booleanas dentro de **q=**
 Como hemos explicado en la sección 03 COnusltas, las APIs de TrawlingWeb aceptan consultas booleanas combinadas con expresiones de la sintaxis de Lucene.
 
-La `q=` permite el filtrado y optimización de la consulta para obtener los mejores resultados posibles. Dentro de `q=` puedes utilizar parámetros de filtrado (ver ), que son atributos asignados por TrawlingWeb a cada elemento, así como expresiones booleanas que son características de los contenidos capturados. 
+La `q=` permite el filtrado y optimización de la consulta para obtener los mejores resultados posibles. Dentro de `q=` puedes utilizar parámetros de filtrado (ver ), que son atributos asignados por TrawlingWeb a cada elemento, así como expresiones booleanas que son características de la información indexada. 
 
 Recuerda que en la sección 03 Consultas hay una lista más completa de expresiones booleanas que puedes combinar con los filtros dentro de `q=`. A continuación, algunos ejemplos de parámetros de filtrado.
 

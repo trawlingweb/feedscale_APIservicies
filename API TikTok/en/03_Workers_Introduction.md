@@ -1,10 +1,10 @@
 ## What is a Worker?
 
-A **Worker** in TrawlingWeb is a key entity that allows users to perform automated and specific searches on social networks, particularly TikTok, using Keywords. These Workers are configured by users to track, capture, and analyze content in real-time or at specified intervals, according to their specific needs.
+A **Worker** in TrawlingWeb is a key entity that allows users to perform automated and specific searches on social networks, particularly TikTok, using Keywords. These Workers are configured by users to monitor, analyze, and process content in real-time or at specified intervals, according to their specific needs.
 
 ### How Workers Work
 
-- **Keywords:** Each Worker is associated with one or more Keywords, which are search terms defined by the user. These terms can include hashtags, mentions, or any relevant word or phrase for monitoring content on TikTok. The effectiveness of a Worker depends on the accuracy and relevance of the configured Keywords.
+- **Keywords:** Each Worker is associated with one or more Keywords, which are search terms defined by the user. These terms can include hashtags, mentions, or any relevant word or phrase for monitoring data on TikTok. The effectiveness of a Worker depends on the accuracy and relevance of the configured Keywords.
 
 - **Credits:** The number of Keywords a user can configure within a Worker depends on the number of credits available in their TrawlingWeb account. In TrawlingWeb, 1 credit equals 1 Keyword. Therefore, if a user has 10 credits, they can configure up to 10 Keywords for one or multiple Workers.
 
@@ -16,7 +16,7 @@ A **Worker** in TrawlingWeb is a key entity that allows users to perform automat
 
 ### Example of Use
 
-Suppose a brand wants to monitor in real-time how a new product collection is perceived on TikTok. They configure a Worker in TrawlingWeb with Keywords such as the collection name, related hashtags, and mentions of the brand's official account. As TikTok users post content about the collection, the Worker captures and stores these posts, allowing the brand to analyze the overall sentiment, identify influencers, and respond quickly to interactions.
+Suppose a brand wants to monitor in real-time how a new product collection is perceived on TikTok. They configure a Worker in TrawlingWeb with Keywords such as the collection name, related hashtags, and mentions of the brand's official account. As TikTok users post content about the collection, the Worker analyzes and stores these posts, allowing the brand to analyze the overall sentiment, identify influencers, and respond quickly to interactions.
 
 ### Benefits of Using Workers in TrawlingWeb
 

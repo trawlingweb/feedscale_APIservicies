@@ -1,7 +1,7 @@
 # API NEWS & BLOGS - GET Parameters
 
 ## Introduction
-This section presents a detailed guide on how to build and execute queries using the TrawlingWeb News & Blogs API. This API allows users to access a comprehensive database of captured content, filtering and retrieving specific information using GET parameters.
+This section presents a detailed guide on how to build and execute queries using the TrawlingWeb News & Blogs API. This API allows users to access a comprehensive database of indexed information, filtering and retrieving specific information using GET parameters.
 
 The following explains the standard methods for making queries, breaking down each component of the example URL. Additionally, a table is provided with an exhaustive description of each parameter, its use, default values, and practical examples. This information is essential for developers and users seeking to maximize the efficiency and accuracy of their API queries.
 
@@ -31,7 +31,7 @@ We combine this elements to get a high accurate searching configuration of the f
 | ts        | Initial date-time limit reference in Unix time (miliseconds)                                                                                                                                         | 3 months before from query moment | ts=1518472804000             |
 | size      | Amount of rows (publications) per page. TrawlingWeb serves required data in pages with a maximum amount of 100 rows. Each page is an effective response. Set up the amount of rows between 1 and 100 | 100 rows by default               | size=40                      |
 | format    | Set up the response file format. Formats available: JSON and XML                                                                                                                                     | JSON file format by default       | format=xml                   |
-| sort      | It's possible to receive the publication rows sorted by publishing date or crawling date.                                                                                                            | Crawled date by default           | sort=published               |
+| sort      | It's possible to receive the publication rows sorted by publishing date or indexing date.                                                                                                            | Indexing date by default           | sort=published               |
 | order     | Set up the order in ascending (from older news to newer) or descending (from newer news to older)                                                                                                    | Ascending by default              | order=desc                   |
 
 ---

@@ -40,11 +40,11 @@ It can also happen that Twitter modifies its system, which may cause the appeara
 ### Tips for rules to ensure proper use of dates:
 
 - **Date Filters**: Set filters to ignore tweets with very old creation dates.
-- **Relevance Rules**: Create criteria that determine the relevance of tweets based on their creation and capture dates.
-- **Change Monitoring**: Monitor changes in the Twitter system to adjust capture and processing rules accordingly.
+- **Relevance Rules**: Create criteria that determine the relevance of tweets based on their creation and processing dates.
+- **Change Monitoring**: Monitor changes in the Twitter system to adjust indexing and processing rules accordingly.
 - **Alerts and Notifications**: Set up alerts to detect and notify the appearance of old tweets, allowing for manual review if necessary.
 
-Implementing these measures helps our clients maintain the integrity and relevance of the data captured by TrawlingWeb.
+Implementing these measures helps our clients maintain the integrity and relevance of the data processed by TrawlingWeb.
 
 ## Pagination
 
@@ -122,7 +122,7 @@ Explanation:
 * **Results**: Defining `size=4`, the maximum will always be 4 in each pagination.
 * **Next**: The "next" in the JSON allows you to jump to the next results, which will be a maximum of those defined in `size=n`, which in this case being `size=4` will be 4 results.
 
-### Example 2: Group by capture date
+### Example 2: Group by processing date
 
 example: 
 ```
@@ -164,21 +164,21 @@ To modify the maximum number of results returned by the API call, use the `size=
 
 ## Periodic Data Source Maintenance
 
-Periodic maintenance of data sources is constant and essential at TrawlingWeb. It involves a comprehensive reevaluation of each source, often incorporating new sections to capture content not previously collected. Having the creation (`published`) and capture (`crawled`) dates allows us to manage these updates efficiently.
+Periodic maintenance of data sources is constant and essential at TrawlingWeb. It involves a comprehensive reevaluation of each source, often incorporating new sections to index content not previously collected. Having the creation (`published`) and capture (`crawled`) dates allows us to manage these updates efficiently.
 
-When adding new data sources to our coverage, we frequently include their history by performing a deep initial capture of all their sections. Again, the creation (`published`) and capture (`crawled`) dates facilitate this process.
+When adding new data sources to our coverage, we frequently include their history by performing a deep initial indexing of all their sections. Again, the creation (`published`) and capture (`crawled`) dates facilitate this process.
 
-Certain sections of Twitter, in addition to chronological content, may display non-chronological content (such as highlighted or related tweets) that we also capture.
+Certain sections of Twitter, in addition to chronological content, may display non-chronological content (such as highlighted or related tweets) that we also index.
 
 ### Considerations
 
-* **Capture Frequency**: The capture frequency of a data source is determined by client needs, functional requirements, the number of tweets, and the publication frequency of the source.
+* **Indexing Frequency**: The indexing frequency of a data source is determined by client needs, functional requirements, the number of tweets, and the publication frequency of the source.
 * **Date Differentiation**: Clearly differentiating the capture date (`crawled`) from the creation date (`published`) allows clients to decide which tweets to incorporate.
-* **Content Delivery Philosophy**: Our philosophy is to deliver all captured tweets, leaving the decision on how to use this content to the clients.
+* **Content Delivery Philosophy**: Our philosophy is to deliver all processed tweets, leaving the decision on how to use this content to the clients.
 
 ### Delivered and Discarded Tweets
 
-* **Delivered Tweets**: All captured tweets are delivered to the client.
+* **Delivered Tweets**: All processed tweets are delivered to the client.
 * **Discarded Tweets**: Clients have the option to discard tweets according to their specific criteria and needs.
 
 ## Lucene Query Syntax

@@ -1,6 +1,6 @@
 # API Instagram - Método GET /posts
 
-Permite obtener resultado capturados de cada Worker configurado de Instagram.
+Permite obtener resultados procesados de cada Worker configurado de Instagram.
 Se pueden usar delimitadores temporales para acotar el contenido devuelto.
 
 # Parámetros GET
@@ -45,7 +45,7 @@ Una vez lanzada una petición a la API de Instagram, esta devolverá una respues
 | likes     | Cantidad de "me gusta"                                                      |    No    |    No     | Entero |                             |
 | text      | Texto descriptivo de la publicación                                         |    No    |    No     | Cadena |                             |
 | published | Fecha de publicación del post                                               |    No    |    No     |  Fecha |        ISO 8601-UTC         |
-| crawled   | Fecha y hora en que se capturó la publicación                               |    No    |    Sí     | Entero | Timestamp UNIX en milisegundos |
+| crawled   | Fecha y hora en que se procesó la publicación                               |    No    |    Sí     | Entero | Timestamp UNIX en milisegundos |
 
 ## Datos del usuario
 

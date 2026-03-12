@@ -43,11 +43,11 @@ It can also happen that API TikTok modifies its system, causing old posts to app
 ### Tips for Rules to Ensure Proper Use of Dates:
 
 - **Date Filters**: Set filters to ignore posts with very old creation dates.
-- **Relevance Rules**: Create criteria to determine tweet relevance based on creation and capture dates.
-- **Monitoring Changes**: Monitor changes in the API TikTok system to adjust capture and processing rules accordingly.
+- **Relevance Rules**: Create criteria to determine tweet relevance based on creation and processing dates.
+- **Monitoring Changes**: Monitor changes in the API TikTok system to adjust indexing and processing rules accordingly.
 - **Alerts and Notifications**: Configure alerts to detect and notify the appearance of old posts, allowing manual review if necessary.
 
-Implementing these measures helps our clients maintain the integrity and relevance of the data captured by TrawlingWeb.
+Implementing these measures helps our clients maintain the integrity and relevance of the data processed by TrawlingWeb.
 
 ## Pagination
 
@@ -122,7 +122,7 @@ Explanation:
 * **Results**: By defining `size=4`, the maximum will be 4 per pagination.
 * **Next**: The "next" within the JSON allows jumping to the next results, which will be up to the number defined in `size=n`, in this case `4` results.
 
-### Example 2: Grouping by Capture Date
+### Example 2: Grouping by Processing Date
 
 example:
 ```
@@ -164,21 +164,21 @@ To modify the maximum number of results returned by the API call, use the `size=
 
 ## Regular Maintenance of Data Sources
 
-Regular maintenance of data sources is constant and essential at TrawlingWeb. It involves a comprehensive reassessment of each source, often involving the addition of new sections to capture previously uncollected content. Having creation dates (`created_at`) and capture dates (`crawled`) allows efficient management of these updates.
+Regular maintenance of data sources is constant and essential at TrawlingWeb. It involves a comprehensive reassessment of each source, often involving the addition of new sections to index previously uncollected content. Having creation dates (`created_at`) and capture dates (`crawled`) allows efficient management of these updates.
 
-When adding new data sources to our coverage, we often include their history by performing an initial deep capture of all their sections. Again, creation dates (`created_at`) and capture dates (`crawled`) facilitate this process.
+When adding new data sources to our coverage, we often include their history by performing an initial deep indexing of all their sections. Again, creation dates (`created_at`) and capture dates (`crawled`) facilitate this process.
 
-Certain sections of API TikTok, in addition to chronological content, may display non-chronological content (such as highlighted or related posts) that we also capture.
+Certain sections of API TikTok, in addition to chronological content, may display non-chronological content (such as highlighted or related posts) that we also index.
 
 ### Considerations
 
-* **Capture Frequency**: The capture frequency of a data source is determined by client needs, functional requirements, tweet volume, and source publishing frequency.
+* **Indexing Frequency**: The indexing frequency of a data source is determined by client needs, functional requirements, tweet volume, and source publishing frequency.
 * **Differentiation of Dates**: Clearly differentiating capture date (`crawled`) from creation date (`created_at`) allows clients to decide which posts to incorporate.
-* **Content Delivery Philosophy**: Our philosophy is to deliver all captured posts, leaving the decision on how to use this content to clients.
+* **Content Delivery Philosophy**: Our philosophy is to deliver all processed posts, leaving the decision on how to use this content to clients.
 
 ### Delivered and Discarded posts
 
-* **Delivered posts**: All captured posts are delivered to the client.
+* **Delivered posts**: All processed posts are delivered to the client.
 * **Discarded posts**: Clients have the option to discard posts according to their specific criteria and needs.
 
 ## Lucene Query Syntax

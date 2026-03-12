@@ -15,7 +15,7 @@ Once a request is made to the API, it will return a response with two distinct t
 | edition_name    | Bulletin acronym                                                                              |    Yes     | String  |                             |
 | edition_number  | Bulletin edition number                                                                       |    Yes     | Integer |                             |
 | published       | Publication date                                                                              |    Yes     |  Date   |        ISO 8601-UTC         |
-| crawled         | Capture date. Time zone is GMT +1                                                             |    Yes     | Integer | UNIX Timestamp milliseconds |
+| crawled         | Processing date. Time zone is GMT +1                                                             |    Yes     | Integer | UNIX Timestamp milliseconds |
 | language        | Publication language                                                                          |    Yes     | String  |          ISO 639-1          |
 | section         | Publication language                                                                          |    Yes     | String  |                             |
 | subsection      | Subsection                                                                                    |    Yes     | String  |                             |

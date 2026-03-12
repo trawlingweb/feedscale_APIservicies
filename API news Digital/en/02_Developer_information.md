@@ -8,12 +8,12 @@ Trawlingweb.com API NEWS & BLOGS is an API REST, so although the data is intende
 
 Data integrity refers to the accuracy, consistency, and reliability of data over time. To ensure the integrity of the data provided by our API, Trawlingweb implements the following practices:
 
-* **Continuous Verification**: Data is continuously verified during the capture process to ensure its accuracy and consistency.
+* **Continuous Verification**: Data is continuously verified during the indexing process to ensure its accuracy and consistency.
 * **Error Correction**: Any inconsistencies or errors detected in the data are promptly corrected to maintain its reliability.
 * **Regular Updates**: Data is regularly updated to reflect the most recent and relevant information, minimizing the possibility of outdated data.
-* **Source Maintenance**: Periodic maintenance of media sources is performed to ensure that the captured data is of high quality and up-to-date.
+* **Source Maintenance**: Periodic maintenance of media sources is performed to ensure that the indexed data is of high quality and up-to-date.
 
-Implementing these measures helps our clients maintain the integrity and reliability of the data captured by Trawlingweb.
+Implementing these measures helps our clients maintain the integrity and reliability of the data indexed by Trawlingweb.
 
 ## URL Structure
 

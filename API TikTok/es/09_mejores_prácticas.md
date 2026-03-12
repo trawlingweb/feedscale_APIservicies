@@ -39,11 +39,11 @@ También puede suceder que API TikTok modifique su sistema, lo que puede provoca
 ### Consejos sobre reglas para garantizar el buen uso de las fechas:
 
 * **Filtros de Fecha**: Establecer filtros para ignorar posts con fechas de creación muy antiguas.
-* **Reglas de Relevancia**: Crear criterios que determinen la relevancia de los posts en función de su fecha de creación y la fecha de captura.
-* **Monitoreo de Cambios**: Supervisar los cambios en el sistema de API TikTok para ajustar las reglas de captura y procesamiento en consecuencia.
+* **Reglas de Relevancia**: Crear criterios que determinen la relevancia de los posts en función de su fecha de creación y la fecha de procesamiento.
+* **Monitoreo de Cambios**: Supervisar los cambios en el sistema de API TikTok para ajustar las reglas de indexación y procesamiento en consecuencia.
 * **Alertas y Notificaciones**: Configurar alertas para detectar y notificar la aparición de posts antiguos, permitiendo una revisión manual si es necesario.
 
-Implementar estas medidas ayuda a nuestros clientes a mantener la integridad y relevancia de los datos capturados por TrawlingWeb.
+Implementar estas medidas ayuda a nuestros clientes a mantener la integridad y relevancia de los datos procesados por TrawlingWeb.
 
 ## Paginación
 
@@ -121,7 +121,7 @@ Explicación:
 * **Resultados**: Definiendo el `size=4`, el máximo siempre será 4 en cada paginación.
 * **Next**: El "next" dentro del JSON permite saltar a los siguientes resultados, que como máximo serán los definidos en el `size=n`, que en este caso al ser `size=4` serán 4 resultados.
 
-### Ejemplo 2: Agrupar por fecha de captura
+### Ejemplo 2: Agrupar por fecha de procesamiento
 
 ejemplo: 
 ```
@@ -163,21 +163,21 @@ Para modificar el número máximo de resultados que devuelve la llamada a la API
 
 ## Mantenimiento Periódico de Fuentes de Datos
 
-El mantenimiento periódico de las fuentes de datos es constante y esencial en TrawlingWeb. Implica una reevaluación integral de cada fuente, lo que a menudo conlleva la incorporación de nuevas secciones para capturar contenido no recopilado anteriormente. Contar con las fechas de creación (`created_at`) y de captura (`crawled`) permite gestionar estas actualizaciones de manera eficiente.
+El mantenimiento periódico de las fuentes de datos es constante y esencial en TrawlingWeb. Implica una reevaluación integral de cada fuente, lo que a menudo conlleva la incorporación de nuevas secciones para indexar contenido no recopilado anteriormente. Contar con las fechas de creación (`created_at`) y de captura (`crawled`) permite gestionar estas actualizaciones de manera eficiente.
 
-Al agregar nuevas fuentes de datos a nuestra cobertura, frecuentemente incluimos su historial realizando una captura inicial profunda de todas sus secciones. Nuevamente, las fechas de creación (`created_at`) y de captura (`crawled`) facilitan este proceso.
+Al agregar nuevas fuentes de datos a nuestra cobertura, frecuentemente incluimos su historial realizando una indexación inicial profunda de todas sus secciones. Nuevamente, las fechas de creación (`created_at`) y de captura (`crawled`) facilitan este proceso.
 
-Ciertas secciones de API TikTok, además del contenido cronológico, pueden mostrar contenido no cronológico (como posts destacados o relacionados) que también capturamos.
+Ciertas secciones de API TikTok, además del contenido cronológico, pueden mostrar contenido no cronológico (como posts destacados o relacionados) que también indexamos.
 
 ### Consideraciones
 
-* **Frecuencia de Captura**: La frecuencia de captura de una fuente de datos se determina por las necesidades del cliente, los requisitos funcionales, la cantidad de posts y la frecuencia de publicación de la fuente.
+* **Frecuencia de Indexación**: La frecuencia de indexación de una fuente de datos se determina por las necesidades del cliente, los requisitos funcionales, la cantidad de posts y la frecuencia de publicación de la fuente.
 * **Diferenciación de Fechas**: Diferenciar claramente la fecha de captura (`crawled`) de la fecha de creación (`created_at`) permite que los clientes decidan qué posts incorporar.
-* **Filosofía de Entrega de Contenido**: Nuestra filosofía es entregar todos los posts capturados, dejando la decisión sobre cómo utilizar este contenido a los clientes.
+* **Filosofía de Entrega de Contenido**: Nuestra filosofía es entregar todos los posts procesados, dejando la decisión sobre cómo utilizar este contenido a los clientes.
 
 ### posts Entregados y Descartados
 
-* **posts Entregados**: Todos los posts capturados se entregan al cliente.
+* **posts Entregados**: Todos los posts procesados se entregan al cliente.
 * **posts Descartados**: Los clientes tienen la opción de descartar posts según sus criterios y necesidades específicas.
 
 ## Sintaxis de Consultas de Lucene

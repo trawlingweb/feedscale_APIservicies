@@ -1,10 +1,10 @@
 # API FeedScale de Trawlingweb.com
 
-Bienvenido a la documentación de la API FeedScale de Trawlingweb.com. Nuestra API proporciona acceso al repositorio de datos estructurados de publicaciones capturadas desde múltiples fuentes de redes sociales y medios digitales. Los datos se almacenan en BigQuery y están disponibles para consulta bajo demanda a través de una API REST, ofreciendo una solución eficaz y escalable para tus necesidades de análisis de contenido y monitoreo de marca.
+Bienvenido a la documentación de la API FeedScale de Trawlingweb.com. Nuestra API proporciona acceso al repositorio de datos estructurados de publicaciones indexadas desde múltiples fuentes de redes sociales y medios digitales. Los datos se almacenan en BigQuery y están disponibles para consulta bajo demanda a través de una API REST, ofreciendo una solución eficaz y escalable para tus necesidades de análisis de contenido y monitoreo de marca.
 
 ## ¿Qué es GeriAI?
 
-**GeriAI** es el motor de inteligencia artificial cognitiva desarrollado por Trawlingweb que procesa y analiza automáticamente las publicaciones capturadas en el repositorio de FeedScale. GeriAI es un sistema de IA avanzado que utiliza técnicas de Procesamiento de Lenguaje Natural (NLP), Machine Learning, Deep Learning, Análisis de Sentimientos, Extracción de Entidades Nombradas (NER), Clasificación de Texto, Análisis de Tópicos (LDA, BERT), Embeddings Semánticos y Transfer Learning para transformar contenido no estructurado en datos inteligentes y accionables.
+**GeriAI** es el motor de inteligencia artificial cognitiva desarrollado por Trawlingweb que procesa y analiza automáticamente las publicaciones indexadas en el repositorio de FeedScale. GeriAI es un sistema de IA avanzado que utiliza técnicas de Procesamiento de Lenguaje Natural (NLP), Machine Learning, Deep Learning, Análisis de Sentimientos, Extracción de Entidades Nombradas (NER), Clasificación de Texto, Análisis de Tópicos (LDA, BERT), Embeddings Semánticos y Transfer Learning para transformar contenido no estructurado en datos inteligentes y accionables.
 
 ### Análisis Multidimensional de GeriAI
 
@@ -31,7 +31,7 @@ Además de las dimensiones estándar, GeriAI proporciona:
 
 ### Procesamiento Automático
 
-Todos estos análisis son realizados automáticamente por GeriAI durante el proceso de captura y almacenamiento en BigQuery. Los datos que obtienes a través de esta API ya incluyen estos enriquecimientos de inteligencia artificial cognitiva, listos para ser utilizados directamente en tus análisis, reportes y generación de KPIs sin necesidad de procesamiento adicional.
+Todos estos análisis son realizados automáticamente por GeriAI durante el proceso de análisis y almacenamiento en BigQuery. Los datos que obtienes a través de esta API ya incluyen estos enriquecimientos de inteligencia artificial cognitiva, listos para ser utilizados directamente en tus análisis, reportes y generación de KPIs sin necesidad de procesamiento adicional.
 
 ## Características Principales:
 
@@ -39,7 +39,7 @@ Todos estos análisis son realizados automáticamente por GeriAI durante el proc
 
 - **Tecnología Avanzada de Almacenamiento**: Utilizamos Google BigQuery como motor de almacenamiento y consulta, garantizando escalabilidad, rendimiento y capacidad para manejar grandes volúmenes de datos históricos.
 
-- **Consulta Bajo Demanda**: Los datos capturados se almacenan de manera eficiente en BigQuery, permitiendo consultas rápidas y flexibles según tus necesidades específicas de análisis.
+- **Consulta Bajo Demanda**: Los datos procesados se almacenan de manera eficiente en BigQuery, permitiendo consultas rápidas y flexibles según tus necesidades específicas de análisis.
 
 - **Paginación Inteligente**: La API implementa un sistema de paginación que permite consumir grandes volúmenes de datos de forma eficiente, con un máximo de 500 resultados por solicitud para garantizar el rendimiento del servidor.
 

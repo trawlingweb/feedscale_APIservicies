@@ -1,6 +1,6 @@
 # FeedScale API - GET /posts Method
 
-This method allows you to retrieve captured FeedScale posts from BigQuery. Temporal delimiters can be used to narrow the returned content.
+This method allows you to retrieve indexed FeedScale posts from BigQuery. Temporal delimiters can be used to narrow the returned content.
 
 ## GET Parameters
 

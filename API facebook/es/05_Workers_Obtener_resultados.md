@@ -1,6 +1,6 @@
 # API Facebook - Método GET /posts
 
-Permite obtener resultado capturados de cada Worker configurado de Facebook.
+Permite obtener resultados procesados de cada Worker configurado de Facebook.
 Se pueden usar delimitadores temporales para acotar el contenido devuelto.
 
 # Parámetros GET
@@ -54,13 +54,13 @@ Al realizar una solicitud a la API de Facebook, se devolverá una respuesta estr
 | type                       | Tipo de post (por ejemplo, historia, foto)                                                                             |    No    |    No     | Cadena  |                             |
 | language                   | Idioma detectado del post, identificado por una etiqueta de idioma BCP 47                                              |    No    |    No     | Cadena  |                             |
 | language_detection_precision | Precisión de la detección del idioma como un porcentaje                                                              |    No    |    No     | Entero  |                             |
-| screen                     | ID de pantalla, relacionado con el proceso de captura de la API                                                        |    No    |    No     | Entero  |                             |
+| screen                     | ID de pantalla, relacionado con el proceso de indexación de la API                                                        |    No    |    No     | Entero  |                             |
 | last_article               | Fecha del último artículo procesado                                                                                    |    No    |    No     |  Fecha  |        ISO 8601-UTC         |
 | oldest_article             | Fecha del artículo más antiguo procesado                                                                               |    No    |    No     |  Fecha  |        ISO 8601-UTC         |
 | hash                       | Hash generado basado en los metadatos del post                                                                         |    No    |    No     | Cadena  |                             |
-| crawled                    | Fecha y hora en que se capturó el post                                                                                 |    No    |    Sí     | Entero  | Timestamp UNIX en milisegundos |
+| crawled                    | Fecha y hora en que se procesó el post                                                                                 |    No    |    Sí     | Entero  | Timestamp UNIX en milisegundos |
 | updated                    | Fecha y hora en que se actualizó por última vez el post                                                                |    No    |    Sí     | Entero  | Timestamp UNIX en milisegundos |
-| time_distance              | Tiempo transcurrido entre la fecha de publicación y la fecha de captura, medido en horas                               |    No    |    No     | Decimal |                             |
+| time_distance              | Tiempo transcurrido entre la fecha de publicación y la fecha de procesamiento, medido en horas                               |    No    |    No     | Decimal |                             |
 
 ## Ejemplo de respuesta en formato JSON:
 

@@ -8,7 +8,7 @@ Once registration is done, visitor becomes a test user. This role enables client
 
 ## Subscribing to services
 
-Once the trial period has ended, users who wish to continue using the service or expand it must formalize a contract. TrawlingWeb offers various subscription options based on credits for calls to the News & Blogs API. This way, clients can choose the number of credits they wish to purchase, allowing them to make queries to the database of content captured by TrawlingWeb until the purchased credits are exhausted.
+Once the trial period has ended, users who wish to continue using the service or expand it must formalize a contract. TrawlingWeb offers various subscription options based on credits for calls to the News & Blogs API. This way, clients can choose the number of credits they wish to purchase, allowing them to make queries to the database of information indexed by TrawlingWeb until the purchased credits are exhausted.
 
 ## Access modes
 

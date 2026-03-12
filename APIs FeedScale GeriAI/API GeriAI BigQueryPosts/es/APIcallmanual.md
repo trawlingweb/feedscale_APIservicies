@@ -1,6 +1,6 @@
 # API FeedScale - Método GET /posts
 
-Este método permite obtener resultados capturados de posts de FeedScale desde BigQuery. Se pueden usar delimitadores temporales para acotar el contenido devuelto.
+Este método permite obtener resultados indexados de posts de FeedScale desde BigQuery. Se pueden usar delimitadores temporales para acotar el contenido devuelto.
 
 ## Parámetros GET
 

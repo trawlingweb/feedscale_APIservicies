@@ -17,7 +17,7 @@ Users can create and define search terms for each Worker directly on the dashboa
 * **Search process**: Workers deliver the keywords to TrawlingWeb spiders to execute searches on the social network.
 * **Delivery process**: Each time the client calls the Worker, it uses the list of keywords to launch the search against the database of results obtained by TrawlingWeb and retrieve only those results related to the list of keywords.
 
-Efficiently implementing and managing Workers allows users to maximize the relevance and accuracy of captured data, adapting to the specific needs of their social media analysis and monitoring.
+Efficiently implementing and managing Workers allows users to maximize the relevance and accuracy of processed data, adapting to the specific needs of their social media analysis and monitoring.
 
 # POST Parameters
 
@@ -115,7 +115,7 @@ json
 
 # Enhanced Search with Facebook Syntax
 
-Facebook employs its own advanced syntax for executing specific and detailed searches within its platform. This syntax allows filtering results by keywords, hashtags, mentions, locations, dates, among other parameters. Furthermore, when defining keywords for a Worker, this syntax can be used to launch precise queries against Facebook's search engine. This maximizes the efficiency and relevance of the data captured by each Worker, facilitating more effective monitoring and analysis of conversations on Facebook.
+Facebook employs its own advanced syntax for executing specific and detailed searches within its platform. This syntax allows filtering results by keywords, hashtags, mentions, locations, dates, among other parameters. Furthermore, when defining keywords for a Worker, this syntax can be used to launch precise queries against Facebook's search engine. This maximizes the efficiency and relevance of the data processed by each Worker, facilitating more effective monitoring and analysis of conversations on Facebook.
 
 Here is a list of elements you can combine with your keywords when creating them within a worker:
 

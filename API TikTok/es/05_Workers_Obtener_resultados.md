@@ -1,6 +1,6 @@
 # API TikTok - Método GET /posts
 
-Permite obtener resultado capturados de cada Worker configurado de TikTok.
+Permite obtener resultados procesados de cada Worker configurado de TikTok.
 Se pueden usar delimitadores temporales para acotar el contenido devuelto.
 
 # Parámetros GET

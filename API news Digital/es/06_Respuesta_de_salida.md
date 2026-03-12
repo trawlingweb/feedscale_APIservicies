@@ -10,7 +10,7 @@ Una vez lanzada una petición al API, éste devolverá una respuesta con dos tip
 | title           | Título de la publicación.                                                                    |    Si    |    No     |         Cadena          |                             | API News |
 | text            | Cuerpo de texto de la publicación.                                                           |    Si    |    No     |         Cadena          |                             | API News |
 | published       | Fecha de publicación.                                                                        |    Si    |    Si     |          Fecha          |        ISO 8601-UTC         | API News |
-| crawled         | Fecha de captura. La zona horaria es GMT +1                                                  |    Si    |    Si     |         Entero          | UNIX Timestamp milisegundos | API News |
+| crawled         | Fecha de indexación. La zona horaria es GMT +1                                                  |    Si    |    Si     |         Entero          | UNIX Timestamp milisegundos | API News |
 | url             | Dirección web de la publicación                                                              |    No    |    No     |         Cadena          |                             | API News |
 | author          | Autor de la publicación                                                                      |    Si    |    No     |         Cadena          |                             | API News |
 | language        | Idioma de la publicación                                                                     |    Si    |    No     |         Cadena          |          ISO 639-1          | API News |

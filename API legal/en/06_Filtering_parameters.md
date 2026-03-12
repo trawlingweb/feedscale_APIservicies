@@ -10,7 +10,7 @@ The following filters allow you to obtain only the data you need.
 | text         | Words that should or should not appear in the desired publications.                                                                                  |
 | language     | Language of the publications we want to include or exclude in the retrieval. See language codes[ISO 639-1](https://es.wikipedia.org/wiki/ISO_639-1). |
 | site_country | Country of the website. See country codes according to [ISO-3166-2](https://es.wikipedia.org/wiki/ISO_3166-2).                                       |
-| crawled      | Crawl date (in milliseconds). [Converter](http://www.onlineconversion.com/unix_time.htm)                                                             |
+| crawled      | Indexing date (in milliseconds). [Converter](http://www.onlineconversion.com/unix_time.htm)                                                             |
 
 ## How to Assign a Filter Expression
 

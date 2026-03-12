@@ -1,6 +1,6 @@
 # Trawlingweb.com's Facebook API
 
-Welcome to the documentation of Trawlingweb.com's Facebook API. Our API provides access to structured data from public Facebook posts. Our advanced crawlers download, structure, and store these contents for on-demand querying, offering an effective and tailored solution for your social media analysis needs.
+Welcome to the documentation of Trawlingweb.com's Facebook API. Our API provides access to structured data from public Facebook posts. Our advanced systems analyze, process, and structure this data for on-demand querying, offering an effective and tailored solution for your social media analysis needs.
 
 ## Key Features:
 
@@ -21,8 +21,8 @@ Welcome to the documentation of Trawlingweb.com's Facebook API. Our API provides
 <br>
 
 * **Structured Access to Facebook Data**: Obtain organized public Facebook data for analysis and further processing.
-* **Advanced Crawling Technology**: We use state-of-the-art crawlers ensuring accurate and up-to-date capture of Facebook contents.
-* **On-Demand Storage and Querying**: Captured data is stored efficiently to allow quick and flexible queries according to your needs.
+* **Advanced Analysis Technology**: We use state-of-the-art systems ensuring accurate and up-to-date analysis of Facebook data.
+* **On-Demand Storage and Querying**: Processed data is stored efficiently to allow quick and flexible queries according to your needs.
 * **Superior Results**: Our clients using various brand tracking options on Facebook highlight Trawlingweb API as the solution delivering the most results, compared to tools like Brandwatch and Talkwalkers.
 * **Versatility and Optimization**: Clients also commend Trawlingweb's versatility in maximizing query efficiency and addressing challenges, continuously optimizing their searches.
 
@@ -32,7 +32,7 @@ Welcome to the documentation of Trawlingweb.com's Facebook API. Our API provides
 * **Sentiment Analysis**: Allows detailed sentiment analysis of posts, aiding in better understanding public opinion and reactions to specific events.
 * **Marketing Strategies**: Supports the development of marketing strategies based on real data of interaction and engagement on Facebook.
 
-Our Facebook API is designed to be a powerful and versatile tool, tailored to meet the diverse social media analysis needs of our users. We invite you to explore the documentation and discover how you can leverage our advanced capabilities in capturing and analyzing Facebook data to the fullest.
+Our Facebook API is designed to be a powerful and versatile tool, tailored to meet the diverse social media analysis needs of our users. We invite you to explore the documentation and discover how you can leverage our advanced capabilities in analyzing and processing Facebook data to the fullest.
 
 ---
 

@@ -14,7 +14,7 @@ Filters are attributes assigned by TrawlingWeb to each element during its source
 | site_region   | Website region. See [ISO-3166-2](https://es.wikipedia.org/wiki/ISO_3166-2)                                                            |
 | author        | Author of the publication. For example, "Shakespeare"                                                                                 |
 | published     | Publishing timestamp in miliseconds. [Conversor](http://www.onlineconversion.com/unix_time.htm)                                       |
-| crawled       | Crawling timestamp in miliseconds. [Conversor](http://www.onlineconversion.com/unix_time.htm)                                         |
+| crawled       | Indexing timestamp in miliseconds. [Conversor](http://www.onlineconversion.com/unix_time.htm)                                         |
 | site_type     | Type of website: general, news, blog or discussion                                                                                    |
 
 ## How to build a filter expression
@@ -39,7 +39,7 @@ Let's see another example: to search the URL https://www.linkedin.com we must re
 
 As explained in Section 03 Queries, the TrawlingWeb APIs accept boolean queries combined with Lucene syntax expressions.
 
-The `q=` parameter allows for filtering and optimizing the query to obtain the best possible results. Within `q=`, you can use filtering parameters (see ), which are attributes assigned by TrawlingWeb to each element, as well as boolean expressions that are characteristics of the captured content.
+The `q=` parameter allows for filtering and optimizing the query to obtain the best possible results. Within `q=`, you can use filtering parameters (see ), which are attributes assigned by TrawlingWeb to each element, as well as boolean expressions that are characteristics of the indexed information.
 
 Remember that in Section 03 Queries, there is a more complete list of boolean expressions that you can combine with filters within `q=`. Below are some examples of filtering parameters.
 
