@@ -26,6 +26,7 @@ https://facebook.trawlingweb.com/posts/{WORKERID}?token={APIKEY}
 | Parámetro | Descripción                                                                  | Default                                                 | Ejemplo            |
 | :-------- | :--------------------------------------------------------------------------- | :------------------------------------------------------ | :----------------- |
 | token     | APIKEY para validar y acceder al sistema de TrawlingWeb. Cada usuario tiene su propia APIKEY individual e intransferible, vinculada a sus servicios y características.           | Valor obligatorio                                       | ?token={APIKEY}    |
+| country_pref| Preferencia de país del cliente (ISO 3166-1 alpha-2, ej: `es`). **Obligatorio para contratos FeedScale Pay-per-Use**. Su omisión penaliza multiplicando x2.5 el coste de la request y conlleva riesgo de bloqueo de acceso. | Obligatorio (Pay-per-Use)                               | &country_pref=es              |
 | ts        | Se trata del delimitador temporal inicial. Formato Unix Time en milisegundos | Delimita a 1 meses en el pasado a partir de la petición | &ts=1518472804000  |
 | tsi       | Se trata del delimitador temporal final. Formato Unix Time en milisegundos   | Delimita con la fecha de petición                       | &tsi=1524818189854 |
 
