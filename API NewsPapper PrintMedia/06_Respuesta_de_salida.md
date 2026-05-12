@@ -49,7 +49,7 @@ Al realizar una petición al API de Prensa Escrita, la respuesta (output) en for
 | `pathComplete`               | Ruta completa en el repositorio                              |    No    |    No     |         Cadena          |                      | API Print media |
 | `boundingBoxMax`             | Coordenadas máximas de la página                             |    No    |    No     |         Objeto          |     JSON object      | API Print media |
 | `status_foto`                | Indica si la página incluye foto (`true`/`false`)            |    No    |    No     |         Cadena          |                      | API Print media |
-| `status_continue`            | Indica si la extracción continúa en páginas siguientes       |    No    |    No     |         Cadena          |                      | API Print media |
+| `status_continue`            | Indica si el análisis TDM continúa en páginas siguientes     |    No    |    No     |         Cadena          |                      | API Print media |
 
 ---
 
