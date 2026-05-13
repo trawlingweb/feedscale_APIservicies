@@ -1,6 +1,6 @@
 # Twitter API - Method GET /posts
 
-This method allows obtaining results captured from each Worker configured in Twitter. Temporal delimiters can be used to narrow down the returned content.
+This method allows obtaining results processed from each Worker configured in Twitter. Temporal delimiters can be used to narrow down the returned content.
 
 This is an advanced method that returns complete results about a tweet's publication, expanding the information compared to the basic method. In addition to basic data about the user who posted it, this method includes more detailed information about the user. It is ideal for statistical analysis that requires detailed information about the user and their posts.
 

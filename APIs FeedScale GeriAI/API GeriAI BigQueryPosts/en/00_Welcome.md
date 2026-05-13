@@ -1,10 +1,10 @@
 # FeedScale API by Trawlingweb.com
 
-Welcome to the FeedScale API documentation by Trawlingweb.com. Our API provides access to a structured repository of posts captured from multiple social media and digital media sources. Data is stored in BigQuery and available for on-demand queries through a REST API, offering an effective and scalable solution for your content analysis and brand monitoring needs.
+Welcome to the FeedScale API documentation by Trawlingweb.com. Our API provides access to a structured repository of posts indexed from multiple social media and digital media sources. Data is stored in BigQuery and available for on-demand queries through a REST API, offering an effective and scalable solution for your content analysis and brand monitoring needs.
 
 ## What is GeriAI?
 
-**GeriAI** is the cognitive artificial intelligence engine developed by Trawlingweb that automatically processes and analyzes posts captured in the FeedScale repository. GeriAI is an advanced AI system that uses Natural Language Processing (NLP), Machine Learning, Deep Learning, Sentiment Analysis, Named Entity Recognition (NER), Text Classification, Topic Analysis (LDA, BERT), Semantic Embeddings, and Transfer Learning techniques to transform unstructured content into intelligent and actionable data.
+**GeriAI** is the cognitive artificial intelligence engine developed by Trawlingweb that automatically processes and analyzes posts indexed in the FeedScale repository. GeriAI is an advanced AI system that uses Natural Language Processing (NLP), Machine Learning, Deep Learning, Sentiment Analysis, Named Entity Recognition (NER), Text Classification, Topic Analysis (LDA, BERT), Semantic Embeddings, and Transfer Learning techniques to transform unstructured content into intelligent and actionable data.
 
 ### GeriAI Multidimensional Analysis
 
@@ -31,7 +31,7 @@ In addition to the standard dimensions, GeriAI provides:
 
 ### Automatic Processing
 
-All these analyses are automatically performed by GeriAI during the capture and storage process in BigQuery. The data you obtain through this API already includes these cognitive artificial intelligence enrichments, ready to be used directly in your analyses, reports, and KPI generation without additional processing.
+All these analyses are automatically performed by GeriAI during the analysis and storage process in BigQuery. The data you obtain through this API already includes these cognitive artificial intelligence enrichments, ready to be used directly in your analyses, reports, and KPI generation without additional processing.
 
 ## Main Features:
 
@@ -39,7 +39,7 @@ All these analyses are automatically performed by GeriAI during the capture and 
 
 - **Advanced Storage Technology**: We use Google BigQuery as the storage and query engine, ensuring scalability, performance, and the ability to handle large volumes of historical data.
 
-- **On-Demand Queries**: Captured data is efficiently stored in BigQuery, allowing fast and flexible queries according to your specific analysis needs.
+- **On-Demand Queries**: Processed data is efficiently stored in BigQuery, allowing fast and flexible queries according to your specific analysis needs.
 
 - **Smart Pagination**: The API implements a pagination system that allows efficient consumption of large data volumes, with a maximum of 500 results per request to ensure server performance.
 

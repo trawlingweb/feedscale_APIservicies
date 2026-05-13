@@ -1,6 +1,6 @@
 # API PRINT MEDIA – Parámetros de Filtrado
 
-Durante el proceso de captura y auditoría de fuentes de **Print Media** (prensa escrita/medios impresos), TrawlingWeb asigna a cada artículo una serie de **filtros** (metadatos estructurados) que te permiten afinar las consultas y obtener solo los registros que te interesan. A continuación tienes la referencia completa:
+Durante el proceso de indexación y auditoría de fuentes de **Print Media** (prensa escrita/medios impresos), TrawlingWeb asigna a cada artículo una serie de **filtros** (metadatos estructurados) que te permiten afinar las consultas y obtener solo los registros que te interesan. A continuación tienes la referencia completa:
 
 ---
 
@@ -18,7 +18,7 @@ Durante el proceso de captura y auditoría de fuentes de **Print Media** (prensa
 | `site_region`   | Región geográfica del medio impreso. Basada en ISO 3166-2.                        |
 | `author`        | Nombre del autor o periodista (p.ej. `MARIELA ROSERO CH.`).                       |
 | `published`     | Fecha de publicación del artículo. Timestamp Unix en milisegundos.                |
-| `crawled`       | Fecha de rastreo/captura. Timestamp Unix en milisegundos.                         |
+| `crawled`       | Fecha de rastreo/indexación. Timestamp Unix en milisegundos.                      |
 | `site_type`     | Tipo de medio impreso (p.ej. `Newspaper`, `Magazine`).                            |
 
 ---

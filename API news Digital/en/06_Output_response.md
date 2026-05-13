@@ -10,7 +10,7 @@ Once a request is made to the API, it will return a response with two differenti
 | title           | Title of the publication.                                                                    |    Yes   |    No     |         String          |                             | API News |
 | text            | Publication text body.                                                           |    Yes   |    No     |         String          |                             | API News |
 | published       | Publication date.                                                                        |    Yes   |    Yes    |          Date          |        ISO 8601-UTC         | API News |
-| crawled         | Capture date. The time zone is GMT +1                                                  |    Yes   |    Yes    |         Integer          | UNIX Timestamp milliseconds | API News |
+| crawled         | Indexing date. The time zone is GMT +1                                                  |    Yes   |    Yes    |         Integer          | UNIX Timestamp milliseconds | API News |
 | url             | Web address of the publication                                                              |    No    |    No     |         String          |                             | API News |
 | author          | Author of the publication                                                                      |    Yes   |    No     |         String          |                             | API News |
 | language        | Language of the publication                                                                     |    Yes   |    No     |         String          |          ISO 639-1          | API News |

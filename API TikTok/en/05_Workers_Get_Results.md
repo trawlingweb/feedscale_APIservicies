@@ -1,6 +1,6 @@
 # API TikTok - GET Method /posts
 
-It allows to obtain the captured result of each configured TikTok Worker.
+It allows to obtain the processed result of each configured TikTok Worker.
 You can use temporary delimiters to narrow the content returned.
 
 # GET Parameters

@@ -8,12 +8,12 @@ Trawlingweb.com API NEWS & BLOGS es una API REST, por lo que aunque los datos es
 
 La integridad de los datos se refiere a la precisión, consistencia y confiabilidad de los datos a lo largo del tiempo. Para garantizar la integridad de los datos proporcionados por nuestra API, Trawlingweb implementa las siguientes prácticas:
 
-* **Verificación Continua**: Los datos son verificados continuamente durante el proceso de captura para asegurar su exactitud y coherencia.
+* **Verificación Continua**: Los datos son verificados continuamente durante el proceso de indexación para asegurar su exactitud y coherencia.
 * **Corrección de Errores**: Cualquier inconsistencia o error detectado en los datos se corrige inmediatamente para mantener su fiabilidad.
 * **Actualización Regular**: Los datos se actualizan regularmente para reflejar la información más reciente y relevante, minimizando la posibilidad de datos obsoletos.
-* **Mantenimiento de Fuentes**: Se realiza un mantenimiento periódico de las fuentes de medios para asegurar que los datos capturados sean de alta calidad y actuales.
+* **Mantenimiento de Fuentes**: Se realiza un mantenimiento periódico de las fuentes de medios para asegurar que los datos indexados sean de alta calidad y actuales.
 
-Implementar estas medidas ayuda a nuestros clientes a mantener la integridad y confiabilidad de los datos capturados por Trawlingweb.
+Implementar estas medidas ayuda a nuestros clientes a mantener la integridad y confiabilidad de los datos indexados por Trawlingweb.
 
 ## Estructura de URL
 

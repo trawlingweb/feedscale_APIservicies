@@ -1,6 +1,6 @@
 # API Facebook - GET Method /posts
 
-Allows retrieving captured results from each configured Facebook Worker.
+Allows retrieving processed results from each configured Facebook Worker.
 Temporal delimiters can be used to limit the returned content.
 
 # GET Parameters
@@ -51,13 +51,13 @@ Upon making a request to the Facebook API, it will return a structured response 
 | type                       | Type of the post (e.g., story, photo)                                                                                  |    No    |    No     | String  |                             |
 | language                   | Detected language of the post, identified by a BCP 47 language tag                                                     |    No    |    No     | String  |                             |
 | language_detection_precision | Precision of the language detection as a percentage                                                                  |    No    |    No     | Integer |                             |
-| screen                     | Screen ID, related to the API's capture process                                                                        |    No    |    No     | Integer |                             |
+| screen                     | Screen ID, related to the API's processing workflow                                                                        |    No    |    No     | Integer |                             |
 | last_article               | Date of the last article processed                                                                                     |    No    |    No     |  Date   |        ISO 8601-UTC         |
 | oldest_article             | Date of the oldest article processed                                                                                   |    No    |    No     |  Date   |        ISO 8601-UTC         |
 | hash                       | Hash generated based on the post metadata                                                                              |    No    |    No     | String  |                             |
-| crawled                    | Date and time when the post was captured                                                                               |    No    |    Yes    | Integer | UNIX Timestamp in milliseconds |
+| crawled                    | Date and time when the post was processed                                                                               |    No    |    Yes    | Integer | UNIX Timestamp in milliseconds |
 | updated                    | Date and time when the post was last updated                                                                           |    No    |    Yes    | Integer | UNIX Timestamp in milliseconds |
-| time_distance              | Time elapsed between the publication date and the capture date, measured in hours                                      |    No    |    No     | Decimal |                             |
+| time_distance              | Time elapsed between the publication date and the processing date, measured in hours                                      |    No    |    No     | Decimal |                             |
 
 ## Example response in JSON format:
 ```json

@@ -1,10 +1,10 @@
 ## ¿Qué es un Worker?
 
-Un **Worker** en TrawlingWeb es una entidad clave que permite a los usuarios realizar búsquedas automatizadas y específicas en redes sociales, particularmente en Instagram, utilizando Palabras Clave. Estos Workers son configurados por los usuarios para rastrear, capturar y analizar contenido en tiempo real o en intervalos establecidos, según sus necesidades específicas.
+Un **Worker** en TrawlingWeb es una entidad clave que permite a los usuarios realizar búsquedas automatizadas y específicas en redes sociales, particularmente en Instagram, utilizando Palabras Clave. Estos Workers son configurados por los usuarios para rastrear, procesar y analizar contenido en tiempo real o en intervalos establecidos, según sus necesidades específicas.
 
 ### Funcionamiento de los Workers
 
-- **Palabras Clave:** Cada Worker está asociado a una o más Palabras Clave, que son términos de búsqueda definidos por el usuario. Estos términos pueden incluir hashtags, menciones, o cualquier palabra o frase relevante para el monitoreo de contenidos en Instagram. La efectividad de un Worker depende de la precisión y relevancia de las Palabras Clave configuradas.
+- **Palabras Clave:** Cada Worker está asociado a una o más Palabras Clave, que son términos de búsqueda definidos por el usuario. Estos términos pueden incluir hashtags, menciones, o cualquier palabra o frase relevante para el monitoreo de información en Instagram. La efectividad de un Worker depende de la precisión y relevancia de las Palabras Clave configuradas.
 
 - **Créditos:** La cantidad de Palabras Clave que un usuario puede configurar dentro de un Worker depende del número de créditos disponibles en su cuenta de TrawlingWeb. En TrawlingWeb, 1 crédito equivale a 1 Palabra Clave. Por lo tanto, si un usuario tiene 10 créditos, puede configurar hasta 10 Palabras Clave para uno o varios Workers.
 
@@ -16,7 +16,7 @@ Un **Worker** en TrawlingWeb es una entidad clave que permite a los usuarios rea
 
 ### Ejemplo de Uso
 
-Supongamos que una marca quiere monitorizar en tiempo real cómo se percibe una nueva colección de productos en Instagram. Configuran un Worker en TrawlingWeb con Palabras Clave como el nombre de la colección, hashtags relacionados, y menciones a la cuenta oficial de la marca. A medida que los usuarios de Instagram publican contenido sobre la colección, el Worker captura y almacena estas publicaciones, permitiendo a la marca analizar el sentimiento general, identificar influencers, y responder rápidamente a las interacciones.
+Supongamos que una marca quiere monitorizar en tiempo real cómo se percibe una nueva colección de productos en Instagram. Configuran un Worker en TrawlingWeb con Palabras Clave como el nombre de la colección, hashtags relacionados, y menciones a la cuenta oficial de la marca. A medida que los usuarios de Instagram publican contenido sobre la colección, el Worker procesa y almacena estas publicaciones, permitiendo a la marca analizar el sentimiento general, identificar influencers, y responder rápidamente a las interacciones.
 
 ### Beneficios de Usar Workers en TrawlingWeb
 

@@ -16,7 +16,7 @@ The user can create and define search terms for each Worker directly in the dash
 - **Search Process**: Workers deliver the Keywords to TrawlingWeb's spiders to execute their searches on the social network.
 - **Delivery Process**: Each time the client calls the Worker, it uses the list of Keywords to launch the search against the database of results obtained by TrawlingWeb and retrieve only those results that are related to the list of Keywords.
 
-Implementing and managing Workers efficiently allows users to maximize the relevance and accuracy of the data captured, adapting to the specific needs of their social media analysis and monitoring.
+Implementing and managing Workers efficiently allows users to maximize the relevance and accuracy of the data processed, adapting to the specific needs of their social media analysis and monitoring.
 
 # POST Parameters
 
@@ -120,7 +120,7 @@ Once a request is sent to the Twitter API, it will return a response structured 
 
 ## Better searches with Twitter syntax
 
-Twitter uses its own advanced syntax to perform specific and detailed searches within its platform. This syntax allows filtering results by keywords, hashtags, mentions, locations, and dates, among other parameters. Additionally, when defining keywords for a Worker, this same syntax can be used to launch precise queries against Twitter's search engine. This maximizes the efficiency and relevance of the data captured by each Worker, facilitating more effective monitoring and analysis of Twitter conversations.
+Twitter uses its own advanced syntax to perform specific and detailed searches within its platform. This syntax allows filtering results by keywords, hashtags, mentions, locations, and dates, among other parameters. Additionally, when defining keywords for a Worker, this same syntax can be used to launch precise queries against Twitter's search engine. This maximizes the efficiency and relevance of the data processed by each Worker, facilitating more effective monitoring and analysis of Twitter conversations.
 
 Here is a list of elements you can combine with your keywords when creating them within a worker, organized by categories:
 

@@ -1,6 +1,6 @@
 # API Twitter - Método GET /posts
 
-Este método, permite obtener resultados capturados de cada Worker configurado en Twitter. Se pueden usar delimitadores temporales para acotar el contenido devuelto.
+Este método, permite obtener resultados procesados de cada Worker configurado en Twitter. Se pueden usar delimitadores temporales para acotar el contenido devuelto.
 
 Este es un método báSíco que devuelve resultados completos sobre la publicación de un tweet, incluyendo datos báSícos del usuario emisor. Es un método suficiente para análiSís estadísticos que no requieren información detallada sobre el emisor.
 

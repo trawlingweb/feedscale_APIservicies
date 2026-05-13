@@ -1,6 +1,6 @@
 # API Instagram - Método GET /posts
 
-Permite obtener resultado capturados de cada Worker configurado de Instagram.
+Permite obtener resultados procesados de cada Worker configurado de Instagram.
 Se pueden usar delimitadores temporales para acotar el contenido devuelto.
 
 # Parámetros GET
@@ -25,6 +25,7 @@ https://instagram.trawlingweb.com/posts/{WORKERID}?token={APIKEY}
 | Parámetro | Descripción                                                                  | Default                                                 | Ejemplo            |
 | :-------- | :--------------------------------------------------------------------------- | :------------------------------------------------------ | :----------------- |
 | token     | APIKEY de acceso del cliente al sistema de TrawlingWeb.                      | Valor obligatorio                                       | ?token={APIKEY}    |
+| country_pref| Preferencia de país del cliente (ISO 3166-1 alpha-2, ej: `es`). **Obligatorio para contratos FeedScale Pay-per-Use**. Su omisión penaliza multiplicando x2.5 el coste de la request y conlleva riesgo de bloqueo de acceso. | Obligatorio (Pay-per-Use)                               | &country_pref=es              |
 | ts        | Se trata del delimitador temporal inicial. Formato Unix Time en milisegundos | Delimita a 1 meses en el pasado a partir de la petición | &ts=1518472804000  |
 | tsi       | Se trata del delimitador temporal final. Formato Unix Time en milisegundos   | Delimita con la fecha de petición                       | &tsi=1524818189854 |
 
@@ -44,7 +45,7 @@ Una vez lanzada una petición a la API de Instagram, esta devolverá una respues
 | likes     | Cantidad de "me gusta"                                                      |    No    |    No     | Entero |                             |
 | text      | Texto descriptivo de la publicación                                         |    No    |    No     | Cadena |                             |
 | published | Fecha de publicación del post                                               |    No    |    No     |  Fecha |        ISO 8601-UTC         |
-| crawled   | Fecha y hora en que se capturó la publicación                               |    No    |    Sí     | Entero | Timestamp UNIX en milisegundos |
+| crawled   | Fecha y hora en que se procesó la publicación                               |    No    |    Sí     | Entero | Timestamp UNIX en milisegundos |
 
 ## Datos del usuario
 

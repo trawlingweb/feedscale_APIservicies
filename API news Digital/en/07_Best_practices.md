@@ -31,18 +31,18 @@ next	"http://api.trawlingweb.com/?token=0000000000000000000000000000&q=house&ts=
 
 ## Use of `published` and `crawled` Dates
 
-Trawlingweb provides two dates for each news item: `published` (publication date) and `crawled` (capture date). This distinction is crucial because when incorporating new sections, the system may detect as new news items that were published days or even months ago.
+Trawlingweb provides two dates for each news item: `published` (publication date) and `crawled` (indexing date). This distinction is crucial because when incorporating new sections, the system may detect as new news items that were published days or even months ago.
 
 It is also possible for media outlets to modify their publication systems, leading to the appearance of old news due to errors or SEO strategies. To prevent or control these occurrences, we advise clients to implement security rules in their systems.
 
 ### Tips for Rules to Ensure Proper Use of Dates:
 
 * **Date Filters**: Set filters to ignore news items with very old publication dates.
-* **Relevance Rules**: Create criteria to determine the relevance of news items based on their publication date and capture date.
-* **Monitoring Changes**: Monitor changes in media publication systems to adjust capture and processing rules accordingly.
+* **Relevance Rules**: Create criteria to determine the relevance of news items based on their publication date and indexing date.
+* **Monitoring Changes**: Monitor changes in media publication systems to adjust indexing and processing rules accordingly.
 * **Alerts and Notifications**: Configure alerts to detect and notify the appearance of old news items, allowing for manual review if necessary.
 
-Implementing these measures helps our clients maintain the integrity and relevance of the data captured by TrawlingWeb.
+Implementing these measures helps our clients maintain the integrity and relevance of the data indexed by TrawlingWeb.
 
 ## Pagination
 Each API request can return a maximum of 100 messages that match your query. However, there may be many more results that match your filter parameters. To consume all the data, you must continue making calls to the URL indicated in the **next** parameter of the output of each request.
@@ -67,7 +67,7 @@ https://api.trawlingweb.com/?token=0000000000000000000&q=obama&sort=crawled&orde
 
 Explanation:
 * **Search**: Searches for news containing the word "obama" in the text ***(q=obama)***
-* **Grouping*: News items are organized by capture date ***(sort=crawled)***
+* **Grouping*: News items are organized by indexing date ***(sort=crawled)***
 * **Sorting**: News items are sorted from oldest to newest ***(order=asc)***
 * **Results**: If size=n is not defined, the maximum is always 100.
 * **Next**: The "next" parameter in the JSON allows jumping to the next set of results, with a maximum of 100.
@@ -109,10 +109,10 @@ Review sections 04_Filtering_Parameter and 05_Syntax_for_Queries to properly han
 
 The grouping parameter is used with the following syntax: `sort=`. This allows grouping news items by two types of temporal criteria:
 
-* **Crawled**: Groups by capture date. The date used in the API call is the date the news article or post was captured. `sort=crawled`
+* **Crawled**: Groups by indexing date. The date used in the API call is the date the news article or post was indexed. `sort=crawled`
 * **Published**: Groups by publication date. The date used in the API call is the date the news article or post was originally published by its creator. `sort=published`
 
-### Example 1: Grouping by capture date
+### Example 1: Grouping by indexing date
 
 example: 
 ```
@@ -121,7 +121,7 @@ https://api.trawlingweb.com/?token=0000000000000000000&q=obama&sort=crawled&orde
 
 Explanation:
 * **Search**: Searches for news containing the word "obama" in the text ***(q=obama)***
-* **Grouping*: News items are organized by capture date ***(sort=crawled)***
+* **Grouping*: News items are organized by indexing date ***(sort=crawled)***
 * **Sorting**: News items are sorted from newest to oldest ***(order=desc)***
 * **Results**: With size=4 defined, the maximum will always be 4 per pagination.
 * **Next**: The "next" parameter in the JSON allows jumping to the next set of results, which will be the number defined by size=n; in this case, size=4 means 4 results.
@@ -141,7 +141,7 @@ Explanation:
 * **Next**: The "next" parameter in the JSON allows jumping to the next set of results, which will be the number defined by size=n; in this case, size=4 means 4 results.
 
 #### Tips:
-* If we want to get results grouped by capture date, we use `sort=crawled`, and if we want to get results grouped by publication date, we use `sort=published`.
+* If we want to get results grouped by indexing date, we use `sort=crawled`, and if we want to get results grouped by publication date, we use `sort=published`.
 * If we do not use the `sort=` parameter, the default grouping will be by `crawled`.
 
 ## Ordering (`order=`)
@@ -153,7 +153,7 @@ The sorting parameter is used with the following syntax: `order=`. This allows o
 
 ### Examples:
 
-* To get results grouped by capture date in ***ascending*** order, use `sort=crawled&order=asc`.
+* To get results grouped by indexing date in ***ascending*** order, use `sort=crawled&order=asc`.
 * To get results grouped by publication date in ***descending*** order, use `sort=published&order=desc`.
 
 ## Number of Results (`size=`)
@@ -169,21 +169,21 @@ To modify the maximum number of results returned by the API call, use the `size=
 
 ## Periodic Maintenance of Media Sources
 
-Periodic maintenance of media sources is continuous and core to TrawlingWeb, involving a comprehensive reevaluation of each source, often including adding new sections to scrape previously uncaptured content. Having both capture (`crawled`) and publication (`published`) dates allows for efficient management of these updates.
+Periodic maintenance of media sources is continuous and core to TrawlingWeb, involving a comprehensive reevaluation of each source, often including adding new sections to index previously unprocessed content. Having both indexing (`crawled`) and publication (`published`) dates allows for efficient management of these updates.
 
-When adding new media sources to our coverage, we often include their history by conducting an initial deep scrape of all their sections. Again, capture (`crawled`) and publication (`published`) dates facilitate this process.
+When adding new media sources to our coverage, we often include their history by conducting an initial deep indexing of all their sections. Again, indexing (`crawled`) and publication (`published`) dates facilitate this process.
 
-Certain sections of media outlets, in addition to chronological content, display non-chronological content (such as rankings or related news) that we also capture.
+Certain sections of media outlets, in addition to chronological content, display non-chronological content (such as rankings or related news) that we also index.
 
 ### Considerations
 
-* **Scraping Frequency**: The scraping frequency of a media source is determined by client needs, functional requirements, the volume of news, and the frequency of publication by the media outlet.
-* **Differentiating Dates**: Clearly differentiating capture (`crawled`) and publication (`published`) dates allows clients to decide which news to incorporate.
-* **Content Delivery Philosophy**: Our philosophy is to deliver all captured news, leaving the decision on how to use this content to the clients.
+* **Indexing Frequency**: The indexing frequency of a media source is determined by client needs, functional requirements, the volume of news, and the frequency of publication by the media outlet.
+* **Differentiating Dates**: Clearly differentiating indexing (`crawled`) and publication (`published`) dates allows clients to decide which news to incorporate.
+* **Information Delivery Philosophy**: Our philosophy is to deliver all indexed news, leaving the decision on how to use this information to the clients.
 
 ### Delivered and Discarded News
 
-* **Delivered News**: All captured news is delivered to the client.
+* **Delivered News**: All indexed news is delivered to the client.
 * **Discarded News**: Clients have the option to discard news based on their specific criteria and needs.
 
 ## Lucene Query Syntax

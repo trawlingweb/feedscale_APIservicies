@@ -44,9 +44,9 @@ next           "https://api.trawlingweb.com/press-written?token=TU_TOKEN&q=casa&
 Cada artículo incluye dos fechas:
 
 - **published**: cuándo se publicó originalmente.
-- **crawled**: cuándo TrawlingWeb lo capturó.
+- **crawled**: cuándo TrawlingWeb lo indexó.
 
-> **Atención**: al incorporar nuevas secciones o cambiar formatos, podrías “re-capturar” artículos antiguos. Para evitar ruido:
+> **Atención**: al incorporar nuevas secciones o cambiar formatos, podrías “re-indexar” artículos antiguos. Para evitar ruido:
 >
 > - Filtra por rangos de `published` recientes (`from`/`to`).
 > - Usa reglas de relevancia que comparen `published` vs `crawled`.
@@ -67,7 +67,7 @@ Cada respuesta actualiza `next` con nuevos `ts` y `tsi` (timestamps en ms) para 
 
 ## Modos de paginación
 
-### Caso 1: Agrupar por captura (default)
+### Caso 1: Agrupar por indexación (default)
 
 ```
 …?token=TU_TOKEN
@@ -76,7 +76,7 @@ Cada respuesta actualiza `next` con nuevos `ts` y `tsi` (timestamps en ms) para 
  & order=asc
 ```
 
-- Ordena por fecha de captura (`crawled`), de más antiguo a más reciente.
+- Ordena por fecha de indexación (`crawled`), de más antiguo a más reciente.
 - Máx. 100 resultados → usa `next` para continuar.
 
 ### Caso 2: Agrupar por publicación
@@ -111,7 +111,7 @@ Cada respuesta actualiza `next` con nuevos `ts` y `tsi` (timestamps en ms) para 
 
    - Ignora `published` anteriores a X días.
 
-2. **Detectar recapturas**
+2. **Detectar re-indexaciones**
 
    - Compara `crawled` vs `published` y descarta si la diferencia supera un umbral.
 
@@ -121,21 +121,21 @@ Cada respuesta actualiza `next` con nuevos `ts` y `tsi` (timestamps en ms) para 
 
 4. **Alertas**
 
-   - Notifica recapturas masivas para revisión manual.
+   - Notifica re-indexaciones masivas para revisión manual.
 
 ---
 
 ## Mantenimiento de fuentes
 
 - Revisamos y expandimos periódicamente las secciones de cada medio.
-- Al añadir un medio, raspamos históricamente todas sus páginas (usamos `crawled` vs `published`).
-- Capturamos también contenido no cronológico (rankings, relacionados).
+- Al añadir un medio, indexamos históricamente todas sus páginas (usamos `crawled` vs `published`).
+- Indexamos también contenido no cronológico (rankings, relacionados).
 
 ---
 
 ## Filosofía de entrega
 
-TrawlingWeb siempre entrega **todas** las noticias capturadas. Queda en manos del cliente:
+TrawlingWeb siempre entrega **todas** las noticias indexadas. Queda en manos del cliente:
 
 - **Descartar** lo irrelevante con sus propios filtros.
 - **Procesar** según sus reglas de negocio.

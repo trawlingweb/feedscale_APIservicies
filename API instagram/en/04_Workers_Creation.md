@@ -16,7 +16,7 @@ Users can create and define search terms for each Worker directly on the dashboa
 - **Search Process**: Workers deliver the Keywords to TrawlingWeb's spiders to execute searches on the social network.
 - **Delivery Process**: Each time the client calls the Worker, it uses the list of Keywords to launch the search against the database of results obtained by TrawlingWeb and retrieve only those results related to the list of Keywords.
 
-Implementing and managing Workers efficiently allows users to maximize the relevance and accuracy of the captured data, tailored to the specific needs of their social media analysis and monitoring.
+Implementing and managing Workers efficiently allows users to maximize the relevance and accuracy of the processed data, tailored to the specific needs of their social media analysis and monitoring.
 
 # POST Parameters
 
@@ -106,7 +106,7 @@ json
 
 # Enhanced Searches with Instagram Syntax
 
-Instagram utilizes its own advanced syntax to execute specific and detailed searches within its platform. This syntax allows filtering results by keywords, hashtags, mentions, locations, dates, and other parameters. When defining keywords for a Worker, you can use this syntax to launch precise queries against Instagram's search engine. This maximizes the efficiency and relevance of the data captured by each Worker, facilitating more effective monitoring and analysis of conversations on Instagram.
+Instagram utilizes its own advanced syntax to execute specific and detailed searches within its platform. This syntax allows filtering results by keywords, hashtags, mentions, locations, dates, and other parameters. When defining keywords for a Worker, you can use this syntax to launch precise queries against Instagram's search engine. This maximizes the efficiency and relevance of the data processed by each Worker, facilitating more effective monitoring and analysis of conversations on Instagram.
 
 Here's a list of elements you can combine with your keywords when creating them within a worker:
 

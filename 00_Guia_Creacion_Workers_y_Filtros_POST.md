@@ -22,7 +22,7 @@ El usuario puede crear y definir los términos de búsqueda para cada Worker dir
 - **Proceso de búsqueda**: Los Workers entregan las palabras clave a las arañas de TrawlingWeb para que ejecuten sus búsquedas en la red social.
 - **Proceso de entrega**: Cada vez que el cliente llama al Worker, este utiliza la lista de palabras clave para lanzar la búsqueda contra la base de datos de resultados obtenidos por TrawlingWeb y recuperar solo aquellos resultados que tienen relación con la lista de palabras clave.
 
-Implementar y gestionar Workers de manera eficiente permite a los usuarios maximizar la relevancia y precisión de los datos capturados, adaptándose a las necesidades específicas de sus análisis y monitoreo en redes sociales.
+Implementar y gestionar Workers de manera eficiente permite a los usuarios maximizar la relevancia y precisión de los datos procesados, adaptándose a las necesidades específicas de sus análisis y monitoreo en redes sociales.
 
 ## Parámetros POST
 
@@ -85,7 +85,7 @@ Cada elemento del array `words` consume 1 crédito (1 crédito = 1 Palabra Clave
 
 ## Mejores búsquedas con la sintaxis de Twitter
 
-Twitter utiliza su propia sintaxis avanzada para ejecutar búsquedas específicas y detalladas dentro de su plataforma. Esta sintaxis permite filtrar resultados por palabras clave, hashtags, menciones, ubicaciones y fechas, entre otros parámetros. Además, al definir palabras clave para un Worker, es posible utilizar esta misma sintaxis para lanzar consultas precisas contra el buscador de Twitter. Esto maximiza la eficiencia y relevancia de los datos capturados por cada Worker, facilitando una monitorización y análisis más efectivos de las conversaciones en Twitter.
+Twitter utiliza su propia sintaxis avanzada para ejecutar búsquedas específicas y detalladas dentro de su plataforma. Esta sintaxis permite filtrar resultados por palabras clave, hashtags, menciones, ubicaciones y fechas, entre otros parámetros. Además, al definir palabras clave para un Worker, es posible utilizar esta misma sintaxis para lanzar consultas precisas contra el buscador de Twitter. Esto maximiza la eficiencia y relevancia de los datos procesados por cada Worker, facilitando una monitorización y análisis más efectivos de las conversaciones en Twitter.
 
 Aquí tienes un listado de los elementos que puedes combinar con tus palabras clave al crearlas dentro de un worker:
 
@@ -224,7 +224,7 @@ El usuario puede crear y definir los términos de búsqueda para cada Worker dir
 * **Proceso de búsqueda**: Los Workers entregan las palabras clave a las arañas de TrawlingWeb para que ejecuten sus búsquedas en la red social.
 * **Proceso de entrega**: Cada vez que el cliente llama al Worker, este utiliza la lista de palabras clave para lanzar la búsqueda contra la base de datos de resultados obtenidos por TrawlingWeb y recuperar solo aquellos resultados que tienen relación con la lista de palabras clave.
 
-Implementar y gestionar Workers de manera eficiente permite a los usuarios maximizar la relevancia y precisión de los datos capturados, adaptándose a las necesidades específicas de sus análisis y monitoreo en redes sociales.
+Implementar y gestionar Workers de manera eficiente permite a los usuarios maximizar la relevancia y precisión de los datos procesados, adaptándose a las necesidades específicas de sus análisis y monitoreo en redes sociales.
 
 ## Parámetros POST
 
@@ -285,7 +285,7 @@ Cada elemento del array `words` consume 1 crédito (1 crédito = 1 Palabra Clave
 
 ## Mejores búsquedas con la sintaxis de Facebook
 
-Facebook utiliza su propia sintaxis avanzada para ejecutar búsquedas específicas y detalladas dentro de su plataforma. Esta sintaxis permite filtrar resultados por palabras clave, hashtags, menciones, ubicaciones y fechas, entre otros parámetros. Además, al definir palabras clave para un Worker, es posible utilizar esta misma sintaxis para lanzar consultas precisas contra el buscador de Facebook. Esto maximiza la eficiencia y relevancia de los datos capturados por cada Worker, facilitando una monitorización y análisis más efectivos de las conversaciones en Facebook.
+Facebook utiliza su propia sintaxis avanzada para ejecutar búsquedas específicas y detalladas dentro de su plataforma. Esta sintaxis permite filtrar resultados por palabras clave, hashtags, menciones, ubicaciones y fechas, entre otros parámetros. Además, al definir palabras clave para un Worker, es posible utilizar esta misma sintaxis para lanzar consultas precisas contra el buscador de Facebook. Esto maximiza la eficiencia y relevancia de los datos procesados por cada Worker, facilitando una monitorización y análisis más efectivos de las conversaciones en Facebook.
 
 Aquí tienes un listado de los elementos que puedes combinar con tus palabras clave al crearlas dentro de un worker:
 
@@ -323,7 +323,7 @@ El usuario puede crear y definir los términos de búsqueda para cada Worker dir
 * **Proceso de búsqueda**: Los Workers entregan las palabras clave a las arañas de TrawlingWeb para que ejecuten sus búsquedas en la red social.
 * **Proceso de entrega**: Cada vez que el cliente llama al Worker, este utiliza la lista de palabras clave para lanzar la búsqueda contra la base de datos de resultados obtenidos por TrawlingWeb y recuperar solo aquellos resultados que tienen relación con la lista de palabras clave.
 
-Implementar y gestionar Workers de manera eficiente permite a los usuarios maximizar la relevancia y precisión de los datos capturados, adaptándose a las necesidades específicas de sus análisis y monitoreo en redes sociales.
+Implementar y gestionar Workers de manera eficiente permite a los usuarios maximizar la relevancia y precisión de los datos procesados, adaptándose a las necesidades específicas de sus análisis y monitoreo en redes sociales.
 
 ## Parámetros POST
 
@@ -380,7 +380,7 @@ Cada elemento del array `words` consume 1 crédito (1 crédito = 1 Palabra Clave
 
 ## Mejores búsquedas con la sintaxis de Instagram
 
-Instagram utiliza su propia sintaxis avanzada para ejecutar búsquedas específicas y detalladas dentro de su plataforma. Esta sintaxis permite filtrar resultados por palabras clave, hashtags, menciones, ubicaciones y fechas, entre otros parámetros. Además, al definir palabras clave para un Worker, es posible utilizar esta misma sintaxis para lanzar consultas precisas contra el buscador de Instagram. Esto maximiza la eficiencia y relevancia de los datos capturados por cada Worker, facilitando una monitorización y análisis más efectivos de las conversaciones en Instagram.
+Instagram utiliza su propia sintaxis avanzada para ejecutar búsquedas específicas y detalladas dentro de su plataforma. Esta sintaxis permite filtrar resultados por palabras clave, hashtags, menciones, ubicaciones y fechas, entre otros parámetros. Además, al definir palabras clave para un Worker, es posible utilizar esta misma sintaxis para lanzar consultas precisas contra el buscador de Instagram. Esto maximiza la eficiencia y relevancia de los datos procesados por cada Worker, facilitando una monitorización y análisis más efectivos de las conversaciones en Instagram.
 
 Aquí tienes un listado de los elementos que puedes combinar con tus palabras clave al crearlas dentro de un worker:
 
@@ -414,7 +414,7 @@ El usuario puede crear y definir los términos de búsqueda para cada Worker dir
 * **Proceso de búsqueda**: Los Workers entregan las palabras clave a las arañas de TrawlingWeb para que ejecuten sus búsquedas en la red social.
 * **Proceso de entrega**: Cada vez que el cliente llama al Worker, este utiliza la lista de palabras clave para lanzar la búsqueda contra la base de datos de resultados obtenidos por TrawlingWeb y recuperar solo aquellos resultados que tienen relación con la lista de palabras clave.
 
-Implementar y gestionar Workers de manera eficiente permite a los usuarios maximizar la relevancia y precisión de los datos capturados, adaptándose a las necesidades específicas de sus análisis y monitoreo en redes sociales.
+Implementar y gestionar Workers de manera eficiente permite a los usuarios maximizar la relevancia y precisión de los datos procesados, adaptándose a las necesidades específicas de sus análisis y monitoreo en redes sociales.
 
 ## Parámetros POST
 
@@ -471,7 +471,7 @@ Cada elemento del array `words` consume 1 crédito (1 crédito = 1 Palabra Clave
 
 ## Mejores búsquedas con la sintaxis de TikTok
 
-TikTok utiliza su propia sintaxis avanzada para ejecutar búsquedas específicas y detalladas dentro de su plataforma. Esta sintaxis permite filtrar resultados por palabras clave, hashtags, menciones, ubicaciones y fechas, entre otros parámetros. Además, al definir palabras clave para un Worker, es posible utilizar esta misma sintaxis para lanzar consultas precisas contra el buscador de TikTok. Esto maximiza la eficiencia y relevancia de los datos capturados por cada Worker, facilitando una monitorización y análisis más efectivos de las conversaciones en TikTok.
+TikTok utiliza su propia sintaxis avanzada para ejecutar búsquedas específicas y detalladas dentro de su plataforma. Esta sintaxis permite filtrar resultados por palabras clave, hashtags, menciones, ubicaciones y fechas, entre otros parámetros. Además, al definir palabras clave para un Worker, es posible utilizar esta misma sintaxis para lanzar consultas precisas contra el buscador de TikTok. Esto maximiza la eficiencia y relevancia de los datos procesados por cada Worker, facilitando una monitorización y análisis más efectivos de las conversaciones en TikTok.
 
 Aquí tienes un listado de los elementos que puedes combinar con tus palabras clave al crearlas dentro de un worker:
 
@@ -531,7 +531,7 @@ El no poder escapar de estos caracteres especiales correctamente podría dar lug
 
 Como hemos explicado en la sección 03 Consultas, las APIs de TrawlingWeb aceptan consultas booleanas combinadas con expresiones de la sintaxis de Lucene.
 
-La `q=` permite el filtrado y optimización de la consulta para obtener los mejores resultados posibles. Dentro de `q=` puedes utilizar parámetros de filtrado (ver ), que son atributos asignados por TrawlingWeb a cada elemento, así como expresiones booleanas que son características de los contenidos capturados. 
+La `q=` permite el filtrado y optimización de la consulta para obtener los mejores resultados posibles. Dentro de `q=` puedes utilizar parámetros de filtrado (ver ), que son atributos asignados por TrawlingWeb a cada elemento, así como expresiones booleanas que son características de la información indexada. 
 
 Recuerda que en la sección 03 Consultas hay una lista más completa de expresiones booleanas que puedes combinar con los filtros dentro de `q=`. A continuación, algunos ejemplos de parámetros de filtrado.
 

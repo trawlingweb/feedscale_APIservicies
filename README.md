@@ -2,11 +2,11 @@
 ---
 # ES: FeedScale - Solución de Conectividad de Datos de TrawlingWeb
 
-Bienvenido al repositorio de soporte de **FeedScale**, nuestra solución de conectividad de datos para empresas que necesitan integrar grandes volúmenes de contenidos informativos en sus propios sistemas. Aquí encontrarás guías completas, manuales y recursos para ayudarte a aprovechar al máximo nuestros servicios.
+Bienvenido al repositorio de soporte de **FeedScale**, nuestra solución de conectividad de datos para empresas que necesitan integrar grandes volúmenes de datos e información analizada en sus propios sistemas. Aquí encontrarás guías completas, manuales y recursos para ayudarte a aprovechar al máximo nuestros servicios.
 
 ## Descripción General
 
-**FeedScale** es nuestra solución de conectividad de datos que ofrece acceso vía API a un repositorio en tiempo real de **noticias digitales, blogs y publicaciones relevantes en redes sociales**, estructurado y enriquecido semánticamente con inteligencia artificial. 
+**FeedScale** es nuestra solución de conectividad de datos que ofrece acceso vía API a un sistema de análisis en tiempo real de **menciones, opiniones y tendencias de fuentes digitales**, estructurado y enriquecido semánticamente con inteligencia artificial. 
 
 Todo el contenido proviene de medios públicos, abiertos y legalmente accesibles, listos para ser analizados, visualizados o integrados en plataformas propias.
 
@@ -14,13 +14,13 @@ Todo el contenido proviene de medios públicos, abiertos y legalmente accesibles
 
 ![FeedScale Flow](https://img1.wsimg.com/isteam/ip/ad0a6f5f-49c3-4317-8961-3481f38bcd12/FeedScale_Flow-8eb5d05.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280,h:720)
 
-*Diagrama del flujo de procesamiento de datos de FeedScale: desde la captura de fuentes hasta la entrega estructurada de contenido.*
+*Diagrama del flujo de procesamiento de datos de FeedScale: desde el análisis de fuentes hasta la entrega de datos estructurados.*
 
-## 🌐 Universo de Captura de FeedScale
+## 🌐 Universo de Análisis de FeedScale
 
 **Millones de fuentes. Miles de resultados cada hora. Todo estructurado y listo para usar.**
 
-Nuestra infraestructura captura y procesa de forma continua contenidos provenientes de:
+Nuestra infraestructura analiza y procesa de forma continua información proveniente de:
 
 - 🗞️ Más de **18 millones de fuentes** digitales indexadas
 - 📱 Cientos de miles de publicaciones diarias en **redes sociales públicas**
@@ -36,7 +36,7 @@ FeedScale te permite:
 
 ## 🎯 ¿A quién va dirigido FeedScale?
 
-FeedScale está diseñado para empresas que necesitan integrar grandes volúmenes de contenidos informativos. Las aplicaciones más comunes incluyen:
+FeedScale está diseñado para empresas que necesitan integrar grandes volúmenes de datos e información analizada. Las aplicaciones más comunes incluyen:
 
 - **🧠 Social Listening y PR:** más cobertura, menos coste; alertas y sentimiento listos para usar.
 - **📰 Monitoreo de medios:** noticias y menciones en tiempo real, multifuente y multidioma.
@@ -44,7 +44,7 @@ FeedScale está diseñado para empresas que necesitan integrar grandes volúmene
 - **🏢 Grandes agencias de marketing/comunicación:** ingesta vía API para dashboards y reporting.
 - **🧩 Equipos de BI/Analytics:** datos estructurados, integrables en tu stack (ETL/DB/Looker/Power BI).
 - **🛡️ Corporaciones con foco en reputación y riesgos:** detección temprana y anticipación.
-- **🚀 Startups y productos de datos:** acelerar time‑to‑market sin construir la captura desde cero.
+- **🚀 Startups y productos de datos:** acelerar time‑to‑market sin construir el análisis desde cero.
 
 ### Casos de Uso Específicos
 
@@ -118,7 +118,7 @@ Nuestras APIs pueden integrarse con herramientas de visualización populares com
 
 ## Conclusión
 
-**FeedScale** de TrawlingWeb ofrece una solución robusta para la recopilación, procesamiento y análisis de datos en tiempo real. Con acceso a más de 18 millones de fuentes digitales y cobertura en 43 idiomas, FeedScale proporciona la conectividad de datos que tu empresa necesita para integrar grandes volúmenes de contenidos informativos en sus propios sistemas.
+**FeedScale** de TrawlingWeb ofrece una solución robusta para la recopilación, procesamiento y análisis de datos en tiempo real. Con acceso a más de 18 millones de fuentes digitales y cobertura en 43 idiomas, FeedScale proporciona la conectividad de datos que tu empresa necesita para integrar grandes volúmenes de datos e información analizada en sus propios sistemas.
 
 Siguiendo las guías y utilizando los recursos proporcionados en este repositorio, puedes integrar eficazmente FeedScale en tus flujos de trabajo y desbloquear valiosos insights de tus datos.
 
@@ -143,11 +143,11 @@ Si tienes alguna pregunta, necesitas asistencia, contratar o ampliar tus servici
 
 # ENG: FeedScale - TrawlingWeb Data Connectivity Solution
 
-Welcome to the support repository for **FeedScale**, our data connectivity solution for companies that need to integrate large volumes of informational content into their own systems. Here you will find comprehensive guides, manuals, and resources to help you make the most of our services.
+Welcome to the support repository for **FeedScale**, our data connectivity solution for companies that need to integrate large volumes of analyzed data and information into their own systems. Here you will find comprehensive guides, manuals, and resources to help you make the most of our services.
 
 ## Overview
 
-**FeedScale** is our data connectivity solution that offers API access to a real-time repository of **digital news, blogs, and relevant social media publications**, structured and semantically enriched with artificial intelligence.
+**FeedScale** is our data connectivity solution that offers API access to a real-time analysis system of **mentions, opinions and trends from digital sources**, structured and semantically enriched with artificial intelligence.
 
 All content comes from public, open, and legally accessible media, ready to be analyzed, visualized, or integrated into proprietary platforms.
 
@@ -155,13 +155,13 @@ All content comes from public, open, and legally accessible media, ready to be a
 
 ![FeedScale Flow](https://img1.wsimg.com/isteam/ip/ad0a6f5f-49c3-4317-8961-3481f38bcd12/FeedScale_Flow-8eb5d05.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280,h:720)
 
-*FeedScale data processing flow diagram: from source capture to structured content delivery.*
+*FeedScale data processing flow diagram: from source analysis to structured data delivery.*
 
-## 🌐 FeedScale Capture Universe
+## 🌐 FeedScale Analysis Universe
 
 **Millions of sources. Thousands of results every hour. Everything structured and ready to use.**
 
-Our infrastructure continuously captures and processes content from:
+Our infrastructure continuously analyzes and processes information from:
 
 - 🗞️ More than **18 million indexed** digital sources
 - 📱 Hundreds of thousands of daily publications on **public social networks**
@@ -178,7 +178,7 @@ FeedScale allows you to:
 
 ## 🎯 Who is FeedScale For?
 
-FeedScale is designed for companies that need to integrate large volumes of informational content. The most common applications include:
+FeedScale is designed for companies that need to integrate large volumes of analyzed data and information. The most common applications include:
 
 - **🧠 Social Listening and PR:** more coverage, less cost; alerts and sentiment ready to use.
 - **📰 Media monitoring:** real-time news and mentions, multi-source and multilingual.
@@ -186,7 +186,7 @@ FeedScale is designed for companies that need to integrate large volumes of info
 - **🏢 Large marketing/communication agencies:** API ingestion for dashboards and reporting.
 - **🧩 BI/Analytics teams:** structured data, integrable into your stack (ETL/DB/Looker/Power BI).
 - **🛡️ Corporations focused on reputation and risks:** early detection and anticipation.
-- **🚀 Startups and data products:** accelerate time-to-market without building capture from scratch.
+- **🚀 Startups and data products:** accelerate time-to-market without building analysis from scratch.
 
 ### Specific Use Cases
 
@@ -257,7 +257,7 @@ Our APIs can integrate with popular visualization tools such as Looker Studio to
 
 ## Conclusion
 
-**FeedScale** by TrawlingWeb offers a robust solution for real-time data collection, processing, and analysis. With access to more than 18 million digital sources and coverage in 43 languages, FeedScale provides the data connectivity your company needs to integrate large volumes of informational content into your own systems.
+**FeedScale** by TrawlingWeb offers a robust solution for real-time data collection, processing, and analysis. With access to more than 18 million digital sources and coverage in 43 languages, FeedScale provides the data connectivity your company needs to integrate large volumes of analyzed data and information into your own systems.
 
 By following the guides and using the resources provided in this repository, you can effectively integrate FeedScale into your workflows and unlock valuable insights from your data.
 

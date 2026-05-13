@@ -1,6 +1,6 @@
 ## What is a Worker?
 
-A **Worker** in TrawlingWeb is a key entity that allows users to perform automated and specific searches on social networks, particularly Instagram, using Keywords. These Workers are configured by users to track, capture, and analyze content in real-time or at specified intervals, according to their specific needs.
+A **Worker** in TrawlingWeb is a key entity that allows users to perform automated and specific searches on social networks, particularly Instagram, using Keywords. These Workers are configured by users to track, process, and analyze content in real-time or at specified intervals, according to their specific needs.
 
 ### How Workers Work
 
@@ -16,7 +16,7 @@ A **Worker** in TrawlingWeb is a key entity that allows users to perform automat
 
 ### Example of Use
 
-Suppose a brand wants to monitor in real-time how a new product collection is perceived on Instagram. They configure a Worker in TrawlingWeb with Keywords such as the collection name, related hashtags, and mentions of the brand's official account. As Instagram users post content about the collection, the Worker captures and stores these posts, allowing the brand to analyze the overall sentiment, identify influencers, and respond quickly to interactions.
+Suppose a brand wants to monitor in real-time how a new product collection is perceived on Instagram. They configure a Worker in TrawlingWeb with Keywords such as the collection name, related hashtags, and mentions of the brand's official account. As Instagram users post content about the collection, the Worker processes and stores these posts, allowing the brand to analyze the overall sentiment, identify influencers, and respond quickly to interactions.
 
 ### Benefits of Using Workers in TrawlingWeb
 

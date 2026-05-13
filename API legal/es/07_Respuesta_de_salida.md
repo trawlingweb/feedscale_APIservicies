@@ -15,7 +15,7 @@ Una vez lanzada una petición al API, éste devolverá una respuesta con dos tip
 | edition_name    | Siglas del boletín                                                                                     |    Si     | Cadena  |                             |
 | edition_number  | Número de edición del boletín                                                                          |    Si     | Entero  |                             |
 | published       | Fecha de publicación.                                                                                  |    Si     |  Fecha  |        ISO 8601-UTC         |
-| crawled         | Fecha de captura. La zona horaria es GMT +1                                                            |    Si     | Entero  | UNIX Timestamp milisegundos |
+| crawled         | Fecha de procesamiento. La zona horaria es GMT +1                                                            |    Si     | Entero  | UNIX Timestamp milisegundos |
 | language        | Idioma de la publicación                                                                               |    Si     | Cadena  |          ISO 639-1          |
 | section         | Sección principal                                                                                      |    Si     | Cadena  |                             |
 | subsection      | Subsección                                                                                             |    Si     | Cadena  |                             |

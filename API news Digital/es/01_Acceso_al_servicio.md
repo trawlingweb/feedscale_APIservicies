@@ -8,7 +8,7 @@ Una vez registrado, el visitante recibe el rol de usuario de pruebas. Este rol p
 
 ## Contratación de servicios
 
-Una vez finalizado el periodo de prueba, los usuarios que deseen continuar utilizando el servicio o ampliarlo deberán formalizar un contrato. TrawlingWeb ofrece diversas opciones de contratación basadas en créditos para llamadas al API News & Blogs. De esta manera, los clientes pueden seleccionar la cantidad de créditos que desean adquirir, permitiéndoles realizar consultas a la base de datos de contenidos capturados por TrawlingWeb hasta agotar los créditos contratados.
+Una vez finalizado el periodo de prueba, los usuarios que deseen continuar utilizando el servicio o ampliarlo deberán formalizar un contrato. TrawlingWeb ofrece diversas opciones de contratación basadas en créditos para llamadas al API News & Blogs. De esta manera, los clientes pueden seleccionar la cantidad de créditos que desean adquirir, permitiéndoles realizar consultas a la base de datos de información indexada por TrawlingWeb hasta agotar los créditos contratados.
 
 ## Modos de acceso
 

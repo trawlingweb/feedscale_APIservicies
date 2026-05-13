@@ -1,6 +1,6 @@
 # API Twitter - Método GET /posts_full Search
 
-Permite obtener resultados capturados de cada Worker configurado en Twitter. Se pueden utilizar delimitadores temporales para acotar el contenido devuelto.
+Permite obtener resultados procesados de cada Worker configurado en Twitter. Se pueden utilizar delimitadores temporales para acotar el contenido devuelto.
 
 Este es un método avanzado que devuelve resultados completos sobre la publicación de un tweet, ampliando la información en comparación con el método básico. Además de los datos básicos del usuario emisor, este método incluye más detalles relativos al emisor. Es ideal para análisis estadísticos que requieren información detallada sobre el emisor y sus publicaciones.
 
@@ -27,9 +27,10 @@ https://twitter.trawlingweb.com/posts_full/?token={APIKEY}&q={Boollean_Expressio
 | Parámetro | Descripción                                                                                                                                                                                                                | Default                                                 | Ejemplo                       |
 | :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------ | :---------------------------- |
 | token     | APIKEY de acceso del cliente al sistema de TrawlingWeb.                                                                                                                                                                    | Valor obligatorio                                       | ?token={APIKEY}               |
+| country_pref| Preferencia de país del cliente (ISO 3166-1 alpha-2, ej: `es`). **Obligatorio para contratos FeedScale Pay-per-Use**. Su omisión penaliza multiplicando x2.5 el coste de la request y conlleva riesgo de bloqueo de acceso. | Obligatorio (Pay-per-Use)                               | &country_pref=es              |
 | ts        | Se trata del delimitador temporal inicial. Formato Unix Time en milisegundos                                                                                                                                               | Delimita a 1 meses en el pasado a partir de la petición | &ts=1518472804000             |
 | tsi       | Se trata del delimitador temporal final. Formato Unix Time en milisegundos                                                                                                                                                 | Delimita con la fecha de petición                       | &tsi=1524818189854            |
-| q         | Expresión construida con palabras o expresiones clave que configura los filtros de búsqueda. Permite hacer combinaciones con los distintos tipos de filtros disponibles mediante los operadores booleanos _y_, _o_ y _no_. |                                                         | &q=("barcelona" AND "Madrid") |
+| q         | Expresión construida con filtros y expresiones clave de búsqueda. Permite sintaxis Lucene con búsqueda exacta entre comillas dobles ("") y operadores booleanos (AND, OR, NOT). [Consulta la Guía Básica de Operadores Booleanos](../../00_Guia_Basica_Booleanos.md) para más detalles y ejemplos. |                                                         | &q=("barcelona" AND "Madrid") |
 
 # Respuesta de salida - RESPONSE
 

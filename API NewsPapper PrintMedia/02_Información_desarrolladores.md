@@ -11,7 +11,7 @@ La API de **Print media** de TrawlingWeb es una API REST. Los datos se entregan 
 Para garantizar que los datos de prensa escrita sean siempre precisos y fiables, TrawlingWeb aplica:
 
 - **Verificación Continua**
-  Cada artículo extraído se somete a validaciones automáticas (metadatos, fechas, formato de texto) en el momento de la captura.
+  Cada artículo extraído se somete a validaciones automáticas (metadatos, fechas, formato de texto) en el momento del procesamiento.
 
 - **Corrección de Errores**
   Cualquier anomalía detectada (texto truncado, campos faltantes) se corrige o marca para retrabajo antes de ponerla a disposición.

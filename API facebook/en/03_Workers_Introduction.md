@@ -1,6 +1,6 @@
 ## What is a Worker?
 
-A **Worker** in TrawlingWeb is a key entity that allows users to perform automated and specific searches on social networks, particularly Facebook, using Keywords. These Workers are configured by users to track, capture, and analyze content in real-time or at specified intervals, according to their specific needs.
+A **Worker** in TrawlingWeb is a key entity that allows users to perform automated and specific searches on social networks, particularly Facebook, using Keywords. These Workers are configured by users to track, process, and analyze content in real-time or at specified intervals, according to their specific needs.
 
 ### How Workers Work
 
@@ -16,7 +16,7 @@ A **Worker** in TrawlingWeb is a key entity that allows users to perform automat
 
 ### Example of Use
 
-Suppose an organization wants to monitor in real-time the perception of their latest advertising campaign on Facebook. They configure a Worker in TrawlingWeb with Keywords related to the campaign's name, relevant hashtags, and mentions of the organization's official page. As Facebook users interact with the campaign, the Worker captures and stores these interactions, allowing the organization to analyze the overall sentiment, identify influential users, and respond quickly to comments.
+Suppose an organization wants to monitor in real-time the perception of their latest advertising campaign on Facebook. They configure a Worker in TrawlingWeb with Keywords related to the campaign's name, relevant hashtags, and mentions of the organization's official page. As Facebook users interact with the campaign, the Worker processes and stores these interactions, allowing the organization to analyze the overall sentiment, identify influential users, and respond quickly to comments.
 
 ### Benefits of Using Workers in TrawlingWeb
 
