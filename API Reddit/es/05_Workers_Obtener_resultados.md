@@ -50,10 +50,12 @@ Una vez lanzada una petición a la API de Reddit, esta devolverá una respuesta 
 
 ## Datos del autor
 
-| Campo             | Descripción                                            | Buscable | Ordenable |  Tipo  | Formato |
-| ----------------- | ------------------------------------------------------ | :------: | :-------: | :----: | :-----: |
-| user_name         | Nombre del autor                                       |    Sí    |    No     | Cadena |         |
-| user_screen_name  | Nombre técnico (u/username) del autor                  |    Sí    |    No     | Cadena |         |
+| Campo             | Descripción                                                                | Buscable | Ordenable |  Tipo  | Formato |
+| ----------------- | -------------------------------------------------------------------------- | :------: | :-------: | :----: | :-----: |
+| user_name         | Username del autor (`u/handle`). En Reddit coincide con `user_screen_name`. |    Sí    |    No     | Cadena |         |
+| user_screen_name  | Username del autor (`u/handle`). En Reddit coincide con `user_name`.        |    Sí    |    No     | Cadena |         |
+
+> **Nota sobre el autor en Reddit**: a diferencia de otras redes (Twitter, Instagram, Facebook, TikTok) Reddit no expone un *display name* separado del handle. Por eso `user_name` y `user_screen_name` contienen **el mismo valor** (el username del autor, sin el prefijo `u/`). Si vienes de otra de nuestras APIs, no asumas la convención `display` vs `handle` aquí.
 
 ## Datos de la petición
 
@@ -75,7 +77,7 @@ Una vez lanzada una petición a la API de Reddit, esta devolverá una respuesta 
         "url": "https://www.reddit.com/r/soccer/comments/abc123/title/",
         "text": "...",
         "subreddit": "soccer",
-        "user_name": "...",
+        "user_name": "username",
         "user_screen_name": "username",
         "published": "2024-08-03T11:00:04.000Z",
         "crawled": 1722682829465

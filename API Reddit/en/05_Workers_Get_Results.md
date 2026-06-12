@@ -50,10 +50,12 @@ Upon making a request to the Reddit API, it will return a structured response as
 
 ## Author data
 
-| Field             | Description                                              | Searchable | Sortable |  Type  | Format |
-| ----------------- | -------------------------------------------------------- | :--------: | :------: | :----: | :----: |
-| user_name         | Author display name                                       |    Yes     |    No    | String |        |
-| user_screen_name  | Technical name (u/username) of the author                 |    Yes     |    No    | String |        |
+| Field             | Description                                                                  | Searchable | Sortable |  Type  | Format |
+| ----------------- | ---------------------------------------------------------------------------- | :--------: | :------: | :----: | :----: |
+| user_name         | Author username (`u/handle`). On Reddit this matches `user_screen_name`.     |    Yes     |    No    | String |        |
+| user_screen_name  | Author username (`u/handle`). On Reddit this matches `user_name`.            |    Yes     |    No    | String |        |
+
+> **Note on the Reddit author**: unlike other networks (Twitter, Instagram, Facebook, TikTok), Reddit does not expose a separate *display name* from the handle. That is why `user_name` and `user_screen_name` hold **the same value** (the author username, without the `u/` prefix). If you come from another of our APIs, do not assume the `display` vs `handle` convention here.
 
 ## Request data
 
@@ -75,7 +77,7 @@ Upon making a request to the Reddit API, it will return a structured response as
         "url": "https://www.reddit.com/r/soccer/comments/abc123/title/",
         "text": "...",
         "subreddit": "soccer",
-        "user_name": "...",
+        "user_name": "username",
         "user_screen_name": "username",
         "published": "2024-08-03T11:00:04.000Z",
         "crawled": 1722682829465
