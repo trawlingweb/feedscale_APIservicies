@@ -77,10 +77,11 @@ Below are some key features and useful examples to optimize your user experience
 
         Mcdonalds AND NOT "Burger King"
 
-5. **Field-Specific Queries**: Specify a field to search in particular parts of the message. In Telegram, searchable fields are `text`, `user_name`, and `user_screen_name`.
+5. **Field-Specific Queries**: Specify a field to search in particular parts of the message. In Telegram, searchable fields are `text`, `user_name` (channel handle / @slug), and `user_screen_name` (channel display title).
    ```
    text:"exact phrase"
-   user_screen_name:publicchannel
+   user_name:publicchannel
+   user_screen_name:"Public News Channel"
    ```
 
    ***Remember: Boolean queries or Lucene syntax parameters must always be used within the q= parameter in the API call URL structure. The elements within q= constitute the entire query attached to the API call.***
@@ -109,10 +110,10 @@ Here are some examples of queries to illustrate the use of Lucene syntax in our 
   "artificial intelligence"
   ```
 
-* Search for messages with "change" in the text from the channel "news":
+* Search for messages with "change" in the text from the channel with handle `news` (`t.me/news`):
 
   ```
-  user_screen_name:news AND text:change
+  user_name:news AND text:change
   ```
 
 * Search for messages mentioning "economy" but not "recession":

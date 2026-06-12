@@ -77,10 +77,11 @@ A continuación, te presentamos algunas características clave y ejemplos útile
 
         Mcdonalds AND NOT "Burger King"
 
-5. **Consultas Específicas de atributo**: Especifica atributo para buscar en partes particulares del mensaje. En Telegram los campos buscables son `text`, `user_name` y `user_screen_name`.
+5. **Consultas Específicas de atributo**: Especifica atributo para buscar en partes particulares del mensaje. En Telegram los campos buscables son `text`, `user_name` (handle/@slug del canal) y `user_screen_name` (nombre visible del canal).
    ```
    text:"frase exacta"
-   user_screen_name:canalpublico
+   user_name:canalpublico
+   user_screen_name:"Canal Público de Noticias"
    ```
 
    ***Recuerda que: Las consultas booleanas o los parámetros de sintaxis de Lucene siempre deben utilizarse dentro del parámetro q= en la estructura de la URL de llamada a la API. Los elementos dentro de q= constituyen toda la consulta que se adjunta a la llamada a la API.***
@@ -109,10 +110,10 @@ Aquí tienes algunos ejemplos de consultas para ilustrar el uso de la sintaxis d
   "inteligencia artificial"
   ```
 
-* Buscar mensajes con "cambio" en el texto del canal "noticias":
+* Buscar mensajes con "cambio" en el texto del canal con handle `noticias` (`t.me/noticias`):
 
   ```
-  user_screen_name:noticias AND text:cambio
+  user_name:noticias AND text:cambio
   ```
 
 * Buscar mensajes que mencionen "economía" pero no "recesión":

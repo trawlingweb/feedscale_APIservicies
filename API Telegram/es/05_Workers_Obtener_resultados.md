@@ -49,10 +49,10 @@ Una vez lanzada una petición a la API de Telegram, esta devolverá una respuest
 
 ## Datos del autor / canal
 
-| Campo             | Descripción                                            | Buscable | Ordenable |  Tipo  | Formato |
-| ----------------- | ------------------------------------------------------ | :------: | :-------: | :----: | :-----: |
-| user_name         | Nombre del canal / autor                               |    Sí    |    No     | Cadena |         |
-| user_screen_name  | Nombre técnico (@username) del canal / autor           |    Sí    |    No     | Cadena |         |
+| Campo             | Descripción                                                       | Buscable | Ordenable |  Tipo  | Formato |
+| ----------------- | ----------------------------------------------------------------- | :------: | :-------: | :----: | :-----: |
+| user_name         | Username técnico (@handle) del canal / autor (slug en `t.me/<slug>`) |    Sí    |    No     | Cadena |         |
+| user_screen_name  | Nombre visible / título del canal / autor                         |    Sí    |    No     | Cadena |         |
 
 ## Datos de la petición
 
@@ -73,8 +73,8 @@ Una vez lanzada una petición a la API de Telegram, esta devolverá una respuest
         "post_id": "...",
         "url": "https://t.me/canalpublico/12345",
         "text": "...",
-        "user_name": "Nombre del canal",
-        "user_screen_name": "canalpublico",
+        "user_name": "canalpublico",
+        "user_screen_name": "Nombre del canal",
         "published": "2024-08-03T11:00:04.000Z",
         "crawled": 1722682829465
       }

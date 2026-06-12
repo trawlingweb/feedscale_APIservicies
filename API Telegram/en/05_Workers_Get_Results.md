@@ -49,10 +49,10 @@ Upon making a request to the Telegram API, it will return a structured response 
 
 ## Author / channel data
 
-| Field             | Description                                              | Searchable | Sortable |  Type  | Format |
-| ----------------- | -------------------------------------------------------- | :--------: | :------: | :----: | :----: |
-| user_name         | Channel / author display name                            |    Yes     |    No    | String |        |
-| user_screen_name  | Technical name (@username) of the channel / author       |    Yes     |    No    | String |        |
+| Field             | Description                                                          | Searchable | Sortable |  Type  | Format |
+| ----------------- | -------------------------------------------------------------------- | :--------: | :------: | :----: | :----: |
+| user_name         | Technical username (@handle) of the channel / author (slug in `t.me/<slug>`) |    Yes     |    No    | String |        |
+| user_screen_name  | Channel / author display name (visible title)                        |    Yes     |    No    | String |        |
 
 ## Request data
 
@@ -73,8 +73,8 @@ Upon making a request to the Telegram API, it will return a structured response 
         "post_id": "...",
         "url": "https://t.me/publicchannel/12345",
         "text": "...",
-        "user_name": "Channel name",
-        "user_screen_name": "publicchannel",
+        "user_name": "publicchannel",
+        "user_screen_name": "Channel name",
         "published": "2024-08-03T11:00:04.000Z",
         "crawled": 1722682829465
       }
