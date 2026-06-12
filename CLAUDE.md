@@ -12,6 +12,8 @@ Guías por API:
 - `API facebook/` — endpoints y parámetros
 - `API TikTok/` — endpoints y parámetros
 - `API youtube/` — endpoints y parámetros
+- `API Telegram/` — endpoints y parámetros (mensajes de canales/grupos públicos)
+- `API Reddit/` — endpoints y parámetros (posts y comentarios, incluye filtro por `subreddit`)
 - `API news Digital/` — APIs de noticias digitales
 - `API NewsPapper PrintMedia/` — prensa impresa
 - `API legal/` — APIs legales
