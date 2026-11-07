@@ -195,3 +195,20 @@ Las tareas de este repo se registran en el Kanban de SAT Console (`satKanbanTask
 - CHANGELOG: `CHANGELOG.md`.
 
 <!-- AI_CODE_INSTRUCTIONS-sync: 2026-08-18 -->
+
+---
+
+<!-- TW-NORMAS:BEGIN (gestionado por trawlingweb/wiki) -->
+## Normas Trawlingweb (bloque gestionado)
+
+> Este bloque lo mantiene `scripts/actualizar_handbooks.py` del repo `trawlingweb/wiki` y se
+> sincroniza a todos los `DEVELOPER_HANDBOOK.md` de la organización. **No lo edites aquí**:
+> cambia `docs/plantillas/handbook_normas_trawlingweb.md` en la wiki.
+
+- **Fuente de verdad**: [`AI_CODE_INSTRUCTIONS.md`](https://github.com/trawlingweb/wiki/blob/main/AI_CODE_INSTRUCTIONS.md) de la wiki. Se trabaja siempre con un workspace que incluya el repo `wiki`.
+- **Las Issues viven en `trawlingweb/wiki`** (una sola bandeja), no en este repo (§32). El assignee dice quién debe actuar y pasar la pelota es obligatorio (§32.5, §32.7).
+- **Ninguna Issue sin Project y ningún Project sin repo enlazado (§32.14, innegociable)**. Antes de crear una Issue, elige o crea su Project (copia de la plantilla #8) y enlaza este repo con `gh project link <N> --owner trawlingweb --repo trawlingweb/<este-repo>`. Auditoría: `scripts/auditar_projects.sh` en la wiki.
+- **Un Project = un gameplan** (§32.9). Al cerrar la Issue, mueve también su tarjeta a «Hecho» en el Project (§32.13).
+- **Documentación obligatoria del repo** (§9): `README.md`, `CLAUDE.md`, `CHANGELOG.md` + `changelogs/` y este handbook. Los cambios de setup, infra o despliegue se anotan aquí.
+- **Sin secretos en el repo**: los valores viven fuera (`.env` de la máquina, gestor de secretos); aquí solo el nombre de la variable.
+<!-- TW-NORMAS:END -->
